@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Artists</title>
+    <link rel="stylesheet" href="../dist/output.css">
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+    <section id="landingPage" class="bg-backgroundLight h-screen w-screen">
+        <nav class="w-screen bg-backgroundLight shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
+            <h2 class="font-reenie text-3xl text-center p-4 text-backgroundDark">Street ARTists</h2>
+        </nav>
+        <main class="flex flex-col items-center">
+            <img src="../img/Logo.png" alt="Logo" class="p-1">
+            <div class="polygon-wrapper">
+                <div id="joinAsArtist" class="polygonCustomTop hover:scale-110 hover:z-10 transition ease-in-out duration-300 cursor-pointer">
+                    <div class="flex flex-col">
+                        <p class="font-reenie text-5xl text-backgroundDark text-center pt-14">Join as Artist</p>
+                        <select name="chooseAnArtist" id="chooseAnArtist" class="self-end mr-5 px-4 bg-backgroundLight2 border border-backgroundDark text-backgroundDark w-[120px]">
+                           <option value="choose" disabled selected>Choose</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="joinAsVisitor" class="polygonCustomBottom hover:scale-110 transition ease-in-out duration-300 cursor-pointer">
+                    <div class="relative h-full">
+                        <p class="font-reenie text-5xl text-backgroundLight text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 whitespace-nowrap">Join as Visitor</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <section id="visitorHomePage" class="bg-backgroundLight h-screen">
+        <div class="w-screen flex flex-col my-2 hidden">
+            <div class="brickrow brickrow1"></div>
+            <div class="brickrow brickrow2 self-end"></div>
+            <div class="brickrow brickrow3"></div>
+            <div class="brickrow brickrow4 self-end"></div>
+            <div class="brickrow brickrow5"></div>
+            <div class="brickrow brickrow6 self-end"></div>
+            <div class="brickrow brickrow7"></div>
+            <div class="brickrow brickrow8 self-end"></div>
+        </div>
+        <div class="sliders-wrapper">
+            <div class="slideLeft">
+                <div class="slide"><img src="../img/1.jpeg" alt=""></div>
+                <div class="slide"><img src="../img/2.jpeg" alt=""></div>
+                <div class="slide"><img src="../img/3.png" alt=""></div>
+                <div class="slide"><img src="../img/4.png" alt=""></div>
+                <div class="slide"><img src="../img/5.jpg" alt=""></div>
+                <div class="slide"><img src="../img/6.jpg" alt=""></div>
+                <div class="slide"><img src="../img/7.webp" alt=""></div>
+                <div class="slide"><img src="../img/8.jpg" alt=""></div>
+                <div class="slide"><img src="../img/9.jpg" alt=""></div>
+                <!-- Double slide -->
+                <div class="slide"><img src="../img/1.jpeg" alt=""></div>
+                <div class="slide"><img src="../img/2.jpeg" alt=""></div>
+                <div class="slide"><img src="../img/3.png" alt=""></div>
+                <div class="slide"><img src="../img/4.png" alt=""></div>
+                <div class="slide"><img src="../img/5.jpg" alt=""></div>
+                <div class="slide"><img src="../img/6.jpg" alt=""></div>
+                <div class="slide"><img src="../img/7.webp" alt=""></div>
+                <div class="slide"><img src="../img/8.jpg" alt=""></div>
+                <div class="slide"><img src="../img/9.jpg" alt=""></div>
+            </div>
+            <div class="slideRight">
+                <div class="slide"><img src="../img/1.jpeg" alt=""></div>
+                <div class="slide"><img src="../img/2.jpeg" alt=""></div>
+                <div class="slide"><img src="../img/3.png" alt=""></div>
+                <div class="slide"><img src="../img/4.png" alt=""></div>
+                <div class="slide"><img src="../img/5.jpg" alt=""></div>
+                <div class="slide"><img src="../img/6.jpg" alt=""></div>
+                <div class="slide"><img src="../img/7.webp" alt=""></div>
+                <div class="slide"><img src="../img/8.jpg" alt=""></div>
+                <div class="slide"><img src="../img/9.jpg" alt=""></div>
+                <!-- Double slide -->
+                <div class="slide"><img src="../img/1.jpeg" alt=""></div>
+                <div class="slide"><img src="../img/2.jpeg" alt=""></div>
+                <div class="slide"><img src="../img/3.png" alt=""></div>
+                <div class="slide"><img src="../img/4.png" alt=""></div>
+                <div class="slide"><img src="../img/5.jpg" alt=""></div>
+                <div class="slide"><img src="../img/6.jpg" alt=""></div>
+                <div class="slide"><img src="../img/7.webp" alt=""></div>
+                <div class="slide"><img src="../img/8.jpg" alt=""></div>
+                <div class="slide"><img src="../img/9.jpg" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/pages/landing.js"></script>
+</body>
+</html>

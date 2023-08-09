@@ -1,0 +1,125 @@
+/* LANDING PAGE POLYGONS */
+
+.polygon-wrapper {
+    height: 393px;
+    width: 260px;
+    position: relative;
+}
+
+.polygonCustomTop {
+    width: 260px;
+    height: 276.5px;
+    background-color: #EDD5BB;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    position: absolute;
+}
+
+.polygonCustomBottom {
+    width: 260px;
+    height: 276.5px;
+    background-color: #A16A5E;
+    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+    position: absolute;
+    bottom: 0;
+}
+
+/* VISITORS PAGE BRICKS */
+
+.brickrow {
+    height: 17px;
+    background-image: url("../img/brick.svg");
+    background-repeat: repeat-x;
+}
+
+.brickrow1, .brickrow2, .brickrow3, .brickrow4, .brickrow5, .brickrow6, .brickrow7, .brickrow8 {
+    width: calc(100% - 20px);
+}
+
+/* VISITORS PAGE SLIDER */
+
+#visitorHomePage .sliders-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #EDD5BB;
+    overflow: hidden;
+    padding: 4.2vh 0;
+}
+
+#visitorHomePage .sliders-wrapper .slideLeft, #visitorHomePage .sliders-wrapper .slideRight {
+    display: flex;
+    width: 540vh;
+    perspective: 100px;
+}
+
+
+#visitorHomePage .sliders-wrapper .slideLeft {
+    -webkit-animation: slideLeft 50s linear infinite;
+    animation: slideLeft 50s linear infinite;
+    margin-bottom: 4.9vh;
+}
+
+#visitorHomePage .sliders-wrapper .slide img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    padding: 0 1.75vh;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(-5px -5px 5px rgba(0, 0, 0, 0.3));
+    cursor: pointer;
+}
+
+#visitorHomePage .sliders-wrapper .slide {
+    height: 17vh;
+    width: 30vh;
+    perspective: 100px;
+}
+
+.slideLeft {
+  animation-duration: 50s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: slideLeft;
+}
+
+.slideRight {
+    animation-duration: 50s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: slideRight;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-270vh);
+  }
+}
+@-webkit-keyframes slideLeft {
+  0% {
+    transform: translateX(-270vh);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-270vh);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
