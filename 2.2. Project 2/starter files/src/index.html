@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../dist/output.css">
     <link rel="stylesheet" href="custom.css">
 </head>
+
 <body>
     <section id="landingPage" class="bg-backgroundLight h-screen w-screen">
         <nav class="w-screen bg-backgroundLight shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
@@ -15,24 +17,38 @@
         <main class="flex flex-col items-center">
             <img src="../img/Logo.png" alt="Logo" class="p-1">
             <div class="polygon-wrapper">
-                <div id="joinAsArtist" class="polygonCustomTop hover:scale-110 hover:z-10 transition ease-in-out duration-300 cursor-pointer">
+                <div id="joinAsArtist"
+                    class="polygonCustomTop hover:scale-110 hover:z-10 transition ease-in-out duration-300 cursor-pointer">
                     <div class="flex flex-col">
                         <p class="font-reenie text-5xl text-backgroundDark text-center pt-14">Join as Artist</p>
-                        <select name="chooseAnArtist" id="chooseAnArtist" class="self-end mr-5 px-4 bg-backgroundLight2 border border-backgroundDark text-backgroundDark w-[120px]">
-                           <option value="choose" disabled selected>Choose</option>
+                        <select name="chooseAnArtist" id="chooseAnArtist"
+                            class="self-end mr-5 px-4 bg-backgroundLight2 border border-backgroundDark text-backgroundDark w-[120px]">
+                            <option value="choose" disabled selected>Choose</option>
                         </select>
                     </div>
                 </div>
-                <div id="joinAsVisitor" class="polygonCustomBottom hover:scale-110 transition ease-in-out duration-300 cursor-pointer">
+                <div id="joinAsVisitor"
+                    class="polygonCustomBottom hover:scale-110 transition ease-in-out duration-300 cursor-pointer">
                     <div class="relative h-full">
-                        <p class="font-reenie text-5xl text-backgroundLight text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 whitespace-nowrap">Join as Visitor</p>
+                        <p
+                            class="font-reenie text-5xl text-backgroundLight text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+                            Join as Visitor</p>
                     </div>
                 </div>
             </div>
         </main>
     </section>
     <section id="visitorHomePage" class="bg-backgroundLight h-screen">
-        <div class="w-screen flex flex-col my-2 hidden">
+        <nav class="w-screen bg-backgroundLight relative h-20 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
+            <div class="absolute">
+                <div class="flex">
+                    <img src="../img/Logo.png" alt="" class="w-28">
+                    <h3 class="font-reenie text-4xl text-backgroundDark mt-4">Street ARTists</h3>
+                </div>
+            </div>
+            <img src="../img/ri_auction-fill.svg" alt="Auction icon" class="absolute right- top-1/2 transform -translate-y-1/2 right-5">
+        </nav>
+        <div class="w-screen flex flex-col my-2 relative">
             <div class="brickrow brickrow1"></div>
             <div class="brickrow brickrow2 self-end"></div>
             <div class="brickrow brickrow3"></div>
@@ -41,6 +57,12 @@
             <div class="brickrow brickrow6 self-end"></div>
             <div class="brickrow brickrow7"></div>
             <div class="brickrow brickrow8 self-end"></div>
+            <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen">
+                <div class="flex justify-center items-center bricks-container">
+                    <p class="inline-block text-3xl font-semibold text-backgroundDark me-2">Looking for a masterpiece?</p>
+                <button class="inline-block bg-backgroundDark text-white whitespace-nowrap py-1 px-4 rounded-sm shadow-lg">Find out now!</button>
+                </div>
+            </div>
         </div>
         <div class="sliders-wrapper">
             <div class="slideLeft">
@@ -86,9 +108,108 @@
                 <div class="slide"><img src="../img/9.jpg" alt=""></div>
             </div>
         </div>
+        <div id="default-carousel" class="relative w-full font-roboto bg-backgroundLight carousel" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 mx-5 overflow-hidden rounded-lg md:h-96">
+                <!-- Item 1 -->
+                <div class="hidden  duration-700 ease-in-out h-full text-xs text-white" data-carousel-item>
+                    <div class="grid grid-cols-2 h-full relative">
+                        <div class="w-full h-full flex items-center justify-center card-border">
+                            <div class="relative w-[65%]">
+                                <img class="w-12 h-12 rounded-full absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-backgroundDark border-2"
+                                    src="https://st2.depositphotos.com/1009634/7235/v/950/depositphotos_72350117-stock-illustration-no-user-profile-picture-hand.jpg"
+                                    alt="Profile Avatar">
+                                <div class="bg-cardBackground pt-10 px-2 text-center pb-2">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, fugit?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center text-center">
+                            <div class="w-[65%]">
+                                <p class="text-backgroundDark">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Soluta dolorem provident
+                                    consequuntur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden  duration-700 ease-in-out h-full text-xs text-white" data-carousel-item>
+                    <div class="grid grid-cols-2 h-full relative">
+                        <div class="w-full h-full flex items-center justify-center card-border">
+                            <div class="relative w-[65%]">
+                                <img class="w-12 h-12 rounded-full absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-backgroundDark border-2"
+                                    src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+                                    alt="Profile Avatar">
+                                <div class="bg-cardBackground pt-10 px-2 text-center pb-2">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, fugit?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center text-center">
+                            <div class="w-[65%]">
+                                <p class="text-backgroundDark">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Soluta dolorem provident
+                                    consequuntur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden  duration-700 ease-in-out h-full text-xs text-white" data-carousel-item>
+                    <div class="grid grid-cols-2 h-full relative">
+                        <div class="w-full h-full flex items-center justify-center card-border">
+                            <div class="relative w-[65%]">
+                                <img class="w-12 h-12 rounded-full absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-backgroundDark border-2"
+                                    src="https://e0.pxfuel.com/wallpapers/427/41/desktop-wallpaper-ghost-boy-danny-phantom-goth-g-on-danny-phantom-fenton-and-sam-manson-danny-phantom-cartoon-profile-cartoon-profile-pics-danny-phantom-cool.jpg"
+                                    alt="Profile Avatar">
+                                <div class="bg-cardBackground pt-10 px-2 text-center pb-2">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, fugit?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center text-center">
+                            <div class="w-[65%]">
+                                <p class="text-backgroundDark">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Soluta dolorem provident
+                                    consequuntur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider controls -->
+            <button type="button"
+                class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-prev>
+                <span class="cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="54" viewBox="0 0 15 54" fill="none">
+                        <path d="M14 1L1 26.2877L14 53" stroke="#A26A5E" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button"
+                class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-next>
+                <span class="cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="54" viewBox="0 0 15 54" fill="none">
+                        <path d="M1 1L14 26.2877L1 53" stroke="#A26A5E" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
     </section>
 
     <script src="./js/main.js"></script>
     <script src="./js/pages/landing.js"></script>
+    <script src="./js/pages/visitors-homepage.js"></script>
 </body>
+
 </html>

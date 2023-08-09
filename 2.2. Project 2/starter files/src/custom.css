@@ -1,3 +1,7 @@
+body {
+  line-height: 1.5;
+}
+
 /* LANDING PAGE POLYGONS */
 
 .polygon-wrapper {
@@ -33,6 +37,14 @@
 
 .brickrow1, .brickrow2, .brickrow3, .brickrow4, .brickrow5, .brickrow6, .brickrow7, .brickrow8 {
     width: calc(100% - 20px);
+}
+
+@media (max-width: 426px) {
+  .bricks-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
 }
 
 /* VISITORS PAGE SLIDER */
@@ -98,6 +110,15 @@
     animation-name: slideRight;
 }
 
+#visitorHomePage .sliders-wrapper .slideLeft:hover, #visitorHomePage .sliders-wrapper .slideRight:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+#visitorHomePage .sliders-wrapper .slide img:hover {
+  transform: translateZ(20px);
+}
+
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
@@ -122,4 +143,21 @@
     100% {
         transform: translateX(0);
     }
+}
+
+
+.card-border::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 50%;
+    width: 1px;
+    height: 70%;
+    background-color: #A16A5E;
+}
+
+.carousel-container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }
