@@ -1,62 +1,77 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.querySelector("[data-carousel='slide']");
-    const carouselItems = Array.from(
-        document.querySelectorAll("[data-carousel-item]")
-    );
-    const carouselPrev = document.querySelector("[data-carousel-prev]");
-    const carouselNext = document.querySelector("[data-carousel-next]");
-    const carouselIndicators = Array.from(
-        document.querySelectorAll("[data-carousel-slide-to]")
-    );
+// Carousel *********
+// ------------------
+const slidesWrapper = document.querySelector(".carousel_slides-wrapper")
+const slides = Array.from(slidesWrapper.children)
+const nextBtn = document.querySelector(".carousel_button--right")
+const prevBtn = document.querySelector(".carousel_button--left")
+let slideWidth = slides[0].getBoundingClientRect().width
 
-    let currentSlide = 0;
+const setSlidePosition = (array, slidesWrapper) => {
+    slideWidth = array[0].getBoundingClientRect().width //Get the new slide width
+    array.forEach((sl, idx) => sl.style.left = slideWidth * idx + "px")
+    const currentSlide = document.querySelector(".current-slide")
+    slidesWrapper.style.transform = `translateX(-${currentSlide.style.left})`
+}
+setSlidePosition(slides, slidesWrapper)
 
-    // Function to show the current slide
-    function showSlide(index) {
-        carouselItems.forEach((item, i) => {
-            if (i === index) {
-                item.classList.remove("hidden");
-            } else {
-                item.classList.add("hidden");
-            }
-        });
-        updateIndicators(index);
+const moveToSlide = (slidesWrapper, currentSlide, targetSlide, goToSlide) => {
+    if (slidesWrapper.style.transition === "none 0s ease 0s") {
+        slidesWrapper.style.transition = "transform 0.25s ease";
+    } //After resize set the transition back to normal
+
+    if (targetSlide) {
+        const amountToMove = targetSlide.style.left
+        slidesWrapper.style.transform = `translateX(-${amountToMove})`
+        targetSlide.classList.add("current-slide")
+
+    } else { //If there is no next or previous slide go to this slide...
+
+        const amountToMove = goToSlide.style.left
+        slidesWrapper.style.transform = `translateX(-${amountToMove})`
+        goToSlide.classList.add("current-slide")
     }
 
-    // Function to update the indicators
-    function updateIndicators(index) {
-        carouselIndicators.forEach((indicator, i) => {
-            indicator.setAttribute("aria-current", i === index);
-        });
+    currentSlide.classList.remove("current-slide")
+    //After giving class to the new slide remove it from the old one.
+}
+
+const hideNotCurrSlides = () => {
+    const notCurrentSlides = document.querySelectorAll("li:not(.current-slide)")
+    const currentSlide = document.querySelector(".current-slide")
+    notCurrentSlides.forEach(el => el.style.opacity = 0)
+    currentSlide.style.opacity = 1
+}
+
+
+nextBtn.addEventListener("click", () => {
+    const currentSlide = document.querySelector(".current-slide");
+    const nextSlide = currentSlide.nextElementSibling;
+    const firstSlide = slidesWrapper.firstElementChild
+    moveToSlide(slidesWrapper, currentSlide, nextSlide, firstSlide)
+    hideNotCurrSlides()
+})
+
+prevBtn.addEventListener("click", () => {
+    const currentSlide = document.querySelector(".current-slide");
+    const prevSlide = currentSlide.previousElementSibling;
+    const lastSlide = slidesWrapper.lastElementChild
+    moveToSlide(slidesWrapper, currentSlide, prevSlide, lastSlide)
+    hideNotCurrSlides()
+})
+
+const onResize = () => {
+    setSlidePosition(slides, slidesWrapper)
+    // When resizing, transition must be "none" to avoid unnecessary movement of the slides -
+    // when setting the new slidesWrapper position
+    if (!(slidesWrapper.style.transition = "none")) {
+        slidesWrapper.style.transition = "none"
     }
+}
 
-    // Function to go to the previous slide
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
-        showSlide(currentSlide);
-    }
-
-    // Function to go to the next slide
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % carouselItems.length;
-        showSlide(currentSlide);
-    }
-
-    // Add event listeners to the buttons
-    carouselPrev.addEventListener("click", prevSlide);
-    carouselNext.addEventListener("click", nextSlide);
-
-    carouselIndicators.forEach((indicator, index) => {
-        indicator.addEventListener("click", function () {
-            showSlide(index);
-        });
-    });
-
-    // Start the carousel with the first slide
-    showSlide(currentSlide);
-
-    // Optionally, add an automatic slide change with a set interval
-    // Uncomment the line below and set the interval time in milliseconds
-    // setInterval(nextSlide, 5000); // Change slide every 5 seconds
-    setInterval(nextSlide, 5000)
-});
+window.addEventListener("resize", () => {
+    clearTimeout(window.resizedFinished)//Waits until resize is finished
+    window.resizedFinished = setTimeout(function () {
+        onResize()
+    }, 100)
+})
+    // ##############
