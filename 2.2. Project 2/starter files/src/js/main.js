@@ -1,27 +1,21 @@
-// Function to hide the landingPage and show visitorHomePage
-function showVisitorHomePage() {
-    const landingPage = document.getElementById('landingPage');
-    const visitorHomePage = document.getElementById('visitorHomePage');
-    landingPage.style.display = 'none';
-    visitorHomePage.style.display = 'block';
-}
 
-// Event listener for click on "Join as Visitor" element
-const joinAsVisitorBtn = document.getElementById('joinAsVisitor');
-joinAsVisitorBtn.addEventListener('click', function () {
-    // Update the URL hash to trigger the hash change event
-    window.location.hash = 'visitor';
-});
 
-// Event listener for hash change event
-window.addEventListener('hashchange', function () {
-    // Check if the hash is 'visitorHomePage'
-    if (window.location.hash === '#visitor') {
-        showVisitorHomePage();
+
+document.addEventListener('click', (e) => {
+    if (e.target.closest("#joinAsVisitor")){
+        location.hash = 'visitor';
+    } else if(e.target.matches(".find-now-btn") || e.target.matches(".slide img")) {
+        location.hash = 'visitor/listing'
     }
-});
+})
 
-// On initial page load, check if the URL has '#visitorHomePage' hash
-if (window.location.hash === '#visitor') {
-    showVisitorHomePage();
+window,addEventListener('hashchange', handleRouting);
+window.addEventListener('load', handleRouting);
+
+function handleRouting() {
+    let hash = location.hash;
+    if(!hash) location.hash = "home";
+    document.querySelectorAll("section").forEach(section => {
+        `#${section.id}` !== hash ? section.style.display = "none" : section.style.display = "block";
+    });
 }
