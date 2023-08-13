@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="custom.css">
 </head>
 
-<body>
-    <section id="landingPage" class="bg-backgroundLight h-screen w-screen">
+<body class="bg-backgroundLight">
+    <section id="landingPage" class="bg-backgroundLight w-screen">
         <nav class="w-screen bg-backgroundLight shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
             <h2 class="font-reenie text-3xl text-center p-4 text-backgroundDark">Street ARTists</h2>
         </nav>
@@ -46,7 +46,8 @@
                     <h3 class="font-reenie text-4xl text-backgroundDark mt-4">Street ARTists</h3>
                 </div>
             </div>
-            <img src="../img/ri_auction-fill.svg" alt="Auction icon" class="absolute right- top-1/2 transform -translate-y-1/2 right-5">
+            <img src="../img/ri_auction-fill.svg" alt="Auction icon"
+                class="absolute right- top-1/2 transform -translate-y-1/2 right-5">
         </nav>
         <div class="w-screen flex flex-col my-2 relative">
             <div class="brickrow brickrow1"></div>
@@ -59,8 +60,11 @@
             <div class="brickrow brickrow8 self-end"></div>
             <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen">
                 <div class="flex justify-center items-center bricks-container">
-                    <p class="inline-block text-3xl font-semibold text-backgroundDark me-2">Looking for a masterpiece?</p>
-                <button class="inline-block bg-backgroundDark text-white whitespace-nowrap py-1 px-4 rounded-sm shadow-lg">Find out now!</button>
+                    <p class="inline-block text-3xl font-semibold text-backgroundDark me-2">Looking for a masterpiece?
+                    </p>
+                    <button
+                        class="inline-block bg-backgroundDark text-white whitespace-nowrap py-1 px-4 rounded-sm shadow-lg">Find
+                        out now!</button>
                 </div>
             </div>
         </div>
@@ -108,30 +112,107 @@
                 <div class="slide"><img src="../img/9.jpg" alt=""></div>
             </div>
         </div>
-        <div class="relative h-[257px] w-full max-w-[800px] mx-auto overflow-hidden">
-            <button class="carousel_button carousel-button-prev">
-					<svg width="15" height="54" viewBox="0 0 15 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M14 1L1 26.2877L14 53" stroke="#A26A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-					</svg>
-				</button>
-                <ul class="relative h-full p-0 m-0 transition transform ease-in duration-500">
-                    <li class="w-100 py-[10%] absolute top-1/2 -translate-y-1/2 transition-opacity duration-500 flex">
-                        <div class="w-1/2 p-[2.5rem 1.5rem]"></div>
-                        <div class="border"></div>
-                        <div class="w-1/2 p-[2.5rem 1.5rem]"></div>
+            <!-- Carousel wrapper -->
+            <div class="w-screen overflow-hidden">
+            <div id="carouselWrapper" class="relative h-[257px] w-full max-w-[800px] mx-auto overflow-hidden">
+                <button type="button"
+                    class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none btnLeft"
+                    data-carousel-prev>
+                    <span class="cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="54" viewBox="0 0 15 54" fill="none">
+                            <path d="M14 1L1 26.2877L14 53" stroke="#A26A5E" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <ul id="carouselSlidesWrapper" class="relative h-full p-0 m-0 slides-wrapper" style="transform: translateX(0px); transition: none 0.25s ease 0s;">
+                    <li class="w-full px-[10%] absolute top-1/2 -translate-y-1/2 carousel-transition current-slide" style="left: 0px;">
+                        <div class="grid grid-cols-2 h-full relative mx-auto">
+                        <div class="w-full h-full flex items-center justify-center card-border">
+                            <div class="relative w-[65%]">
+                                <img class="w-14 h-14 rounded-full absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-backgroundDark border-2"
+                                    src="https://st2.depositphotos.com/1009634/7235/v/950/depositphotos_72350117-stock-illustration-no-user-profile-picture-hand.jpg"
+                                    alt="Profile Avatar">
+                                <div class="bg-cardBackground pt-10 px-1 text-center pb-2">
+                                    <p class="text-white text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, fugit?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center text-center">
+                            <div class="w-[65%]">
+                                <p class="text-backgroundDark text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Soluta dolorem provident
+                                    consequuntur</p>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li class="w-full px-[10%] absolute top-1/2 -translate-y-1/2 carousel-transition" style="left: 768px;">
+                        <div class="grid grid-cols-2 h-full relative mx-auto">
+                        <div class="w-full h-full flex items-center justify-center card-border">
+                            <div class="relative w-[65%]">
+                                <img class="w-14 h-14 rounded-full absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-backgroundDark border-2"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrNV6QZiqVLgqCQ8Azr-TecJZ9TX_d3daIsQ&usqp=CAU"
+                                    alt="Profile Avatar">
+                                <div class="bg-cardBackground pt-10 px-1 text-center pb-2">
+                                    <p class="text-white text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, fugit?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center text-center">
+                            <div class="w-[65%]">
+                                <p class="text-backgroundDark text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Soluta dolorem provident
+                                    consequuntur</p>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li class="w-full px-[10%] absolute top-1/2 -translate-y-1/2 carousel-transition" style="left: 1536px;">
+                        <div class="grid grid-cols-2 h-full relative mx-auto">
+                        <div class="w-full h-full flex items-center justify-center card-border">
+                            <div class="relative w-[65%]">
+                                <img class="w-14 h-14 rounded-full absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-backgroundDark border-2"
+                                    src="https://wallpapers.com/images/featured/cool-art-background-omrsd0ip619jtven.jpg"
+                                    alt="Profile Avatar">
+                                <div class="bg-cardBackground pt-10 px-1 text-center pb-2">
+                                    <p class="text-white text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, fugit?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center text-center">
+                            <div class="w-[65%]">
+                                <p class="text-backgroundDark text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Soluta dolorem provident
+                                    consequuntur</p>
+                            </div>
+                        </div>
+                    </div>
                     </li>
                 </ul>
-                <button class="carousel_button carousel-button-next">
-					<svg width="15" height="54" viewBox="0 0 15 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 1L14 26.2877L1 53" stroke="#A26A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-					</svg>
-				</button>
-        </div>
+                <button type="button"
+                class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none btnRight"
+                data-carousel-next>
+                <span class="cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="54" viewBox="0 0 15 54" fill="none">
+                        <path d="M1 1L14 26.2877L1 53" stroke="#A26A5E" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+            </div>
+            </div>
     </section>
 
     <script src="./js/main.js"></script>
     <script src="./js/pages/landing.js"></script>
     <script src="./js/pages/visitors-homepage.js"></script>
+    <!-- <script src="https://unpkg.com//flowbite@1.4.0/dist/flowbite.js"></script> -->
 </body>
 
 </html>
