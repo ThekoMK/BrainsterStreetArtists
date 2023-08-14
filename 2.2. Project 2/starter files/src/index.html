@@ -219,7 +219,7 @@
         </div>
     </section>
     <section id="visitor/listing" class="bg-backgroundLight2">
-        <nav class="w-screen bg-backgroundLight relative h-20 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
+        <nav class="w-screen bg-backgroundLight relative h-20">
             <div class="absolute">
                 <div class="flex">
                     <img src="../img/Logo.png" alt="" class="w-28">
@@ -229,41 +229,30 @@
             <img src="../img/ri_auction-fill.svg" alt="Auction icon"
                 class="absolute right- top-1/2 transform -translate-y-1/2 right-5">
         </nav>
-        <div id="card-wrapper">
-            <div class="w-full mt-5 bg-backgroundLight">
+        <div id="card-container" class="flex flex-wrap gap-5">
+            <!-- <div class="w-full mt-5 bg-backgroundDark">
                 <a href="#">
-                    <img class="w-full" src="../img/1.jpeg" alt="" />
-                </a>
-                <div class="py-1 px-3">
-                    <div class="flex items-center justify-between">
-                        <h5 class="mb-2 text-4xl font-reenie tracking-tight text-backgroundDark">Artists name</h5>
-                        <span class="text-backgroundLight bg-backgroundDark px-2 rounded border">500$</span>
-                    </div>
-                    <h5 class="text-backgroundDark text-xl">Item title</h5>
-                    <p class="mb-3 font-roboto text-backgroundDark">Here are the biggest enterprise
-                        technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                </div>
+            <img class="w-full" src="${item.image}" alt="" />
+        </a>
+        <div class="py-1 px-3">
+            <div class="flex items-center justify-between">
+                <h5 class="mb-2 text-4xl font-reenie tracking-tight ${index % 2 === 0 ? 'text-backgroundDark' : 'text-backgroundLight'
+        }">artists name</h5>
+                <span class="px-2 rounded border ${index % 2 === 0 ? 'text-backgroundLight bg-backgroundDark' : 'text-backgroundDark bg-backgroundLight'
+        }">500$</span>
             </div>
-            <div class="w-full mt-5 bg-backgroundDark">
-                <a href="#">
-                    <img class="w-full" src="../img/1.jpeg" alt="" />
-                </a>
-                <div class="py-1 px-3">
-                    <div class="flex items-center justify-between">
-                        <h5 class="mb-2 text-4xl font-reenie tracking-tight text-backgroundLight">Artists name</h5>
-                        <span class="text-backgroundDark bg-backgroundLight px-2 rounded border">500$</span>
-                    </div>
-                    <h5 class="text-backgroundLight text-xl">Item title</h5>
-                    <p class="mb-3 font-roboto text-backgroundLight">Here are the biggest enterprise
-                        technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                </div>
-            </div>
+            <h5 class="${index % 2 === 0 ? 'text-backgroundDark' : 'text-backgroundLight'
+        } text-xl">${item.title}</h5>
+            <p class="mb-3 font-roboto ${index % 2 === 0 ? 'text-backgroundDark' : 'text-backgroundLight'
+        }">${item.description}</p>
         </div>
-
-        </div>
+            </div> -->
+            
         </div>
     </section>
 
+    <script src="../Data/data.js"></script>
+    <script src="./js/pages/visitors-listing.js"></script>
     <script src="./js/pages/landing.js"></script>
     <script src="./js/pages/visitors-homepage.js"></script>
     <script src="./js/main.js"></script>
