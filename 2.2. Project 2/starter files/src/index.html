@@ -42,7 +42,9 @@
         <nav class="w-screen bg-backgroundLight relative h-20 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
             <div class="absolute">
                 <div class="flex">
-                    <img src="../img/Logo.png" alt="" class="w-28">
+                    <a href="#" class="logo">
+                        <img src="../img/Logo.png" alt="" class="w-28">
+                    </a>
                     <h3 class="font-reenie text-4xl text-backgroundDark mt-4">Street ARTists</h3>
                 </div>
             </div>
@@ -222,14 +224,16 @@
         <nav class="w-screen bg-backgroundLight relative h-20">
             <div class="absolute">
                 <div class="flex">
-                    <img src="../img/Logo.png" alt="" class="w-28">
+                    <a href="#" class="logo">
+                        <img src="../img/Logo.png" alt="" class="w-28">
+                    </a>
                     <h3 class="font-reenie text-4xl text-backgroundDark mt-4">Street ARTists</h3>
                 </div>
             </div>
             <img src="../img/ri_auction-fill.svg" alt="Auction icon"
                 class="absolute right- top-1/2 transform -translate-y-1/2 right-5">
         </nav>
-        <div id="card-container" class="flex flex-wrap gap-5">
+        <div id="card-container" class="flex flex-wrap gap-5 relative">
             <!-- <div class="w-full mt-5 bg-backgroundDark">
                 <a href="#">
             <img class="w-full" src="${item.image}" alt="" />
@@ -247,7 +251,50 @@
         }">${item.description}</p>
         </div>
             </div> -->
-            
+            <a id="filterButton" class="cursor-pointer">
+                <img src="../img/filterBtn.svg" alt="filter button" class="fixed right-2 bottom-2 w-16">
+            </a>
+        </div>
+        <div class="filters w-screen h-screen bg-backgroundDark text-backgroundLight absolute z-10 top-0 hidden">
+            <div class="filter-container">
+                <h2 class="text-3xl pt-6 font-roboto">Filter by</h2>
+                <div class="flex flex-col">
+                    <label for="filterByTitle" class="pt-5 pb-3 font-thin text-2xl">By Item Title</label>
+                    <input id="filterByTitle" type="text" placeholder="Item Title" class="w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
+                </div>
+                <div class="bg-backgroundLight h-[3px] w-full my-5 border rounded"></div>
+                <div class="flex flex-col">
+                    <label for="filterByArtist" class="pt-3 pb-3 font-thin text-2xl">By Artist</label>
+                    <select name="filterByArtist" id="filterByArtist" class="w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
+                        <option value="Choose" selected disabled>Choose</option>
+                    </select>
+                </div>
+                <div class="bg-backgroundLight h-[3px] w-full my-5 border rounded"></div>
+                <div class="flex flex-col">
+                    <label class="pt-3 pb-3 font-thin text-2xl">By Price</label>
+                    <div class="w-full flex md:flex-col justify-between">
+                        <div class="">
+                            <label for="filterMinimum">Min:</label>
+                            <input type="number" name="minimum" id="filterMinimum" placeholder="Label" class="w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
+                        </div>
+                        <div class="ms-3 md:ms-0">
+                            <label for="filterMaximum">Max:</label>
+                            <input type="number" name="maximum" id="filterMaximum" placeholder="Label" class="md:mt-8 w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-backgroundLight h-[3px] w-full my-5 border rounded"></div>
+                <div class="flex flex-col">
+                    <label for="filterByType" class="pt-3 pb-3 font-thin text-2xl">By Type</label>
+                    <select name="filterByType" id="filterByType" class="overflow-auto w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
+                        <option value="Choose" selected disabled>Choose</option>
+                    </select>
+                </div>
+                <div class="bg-backgroundLight h-[3px] w-full my-5 border rounded"></div>
+            </div>
+            <a id="filterReady" class="cursor-pointer">
+                <img src="../img/filterReady.svg" alt="filter button" class="fixed right-2 bottom-2 w-16">
+            </a>
         </div>
     </section>
 
@@ -256,7 +303,6 @@
     <script src="./js/pages/landing.js"></script>
     <script src="./js/pages/visitors-homepage.js"></script>
     <script src="./js/main.js"></script>
-    <!-- <script src="https://unpkg.com//flowbite@1.4.0/dist/flowbite.js"></script> -->
 </body>
 
 </html>

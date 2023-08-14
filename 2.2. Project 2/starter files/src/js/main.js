@@ -1,11 +1,12 @@
 
 
-
 document.addEventListener('click', (e) => {
     if (e.target.closest("#joinAsVisitor")){
         location.hash = 'visitor';
     } else if(e.target.matches(".find-now-btn") || e.target.matches(".slide img")) {
         location.hash = 'visitor/listing'
+    } else if(e.target.matches(".logo")) {
+        console.log("clicked");
     }
 })
 
