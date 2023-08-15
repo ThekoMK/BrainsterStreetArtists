@@ -148,6 +148,8 @@ itemTypes.forEach((type) => {
     typeInput.appendChild(option);
 });
 
+fetchUsers(filterArtists)
+
 const storageFilterValues = () => {
     let filterValues = {
         itemTitle: itemTitle.value,
