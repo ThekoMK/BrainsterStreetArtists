@@ -12,7 +12,7 @@ async function fetchUsers() {
             option.value = user.name;
             option.textContent = user.name;
             selectElement.appendChild(option);
-            artistInput.appendChild(option)
+            filterArtists.appendChild(option)
         });
     } catch (error) {
         console.error('Error fetching users:', error);

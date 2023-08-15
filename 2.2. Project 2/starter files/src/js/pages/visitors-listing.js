@@ -26,21 +26,114 @@ function renderCard(cardWrapper, item, index) {
 
 const cardWrapper = document.getElementById("card-container"); // Replace with your actual card wrapper element
 
-publishedItems.forEach((item, index) => {
-    renderCard(cardWrapper, item, index);
-});
+const renderAllCards = () => {
+    publishedItems.forEach((item, index) => {
+        renderCard(cardWrapper, item, index);
+    });
+}
+
+renderAllCards();
 
 // Filtering
 
+// const filterButton = document.getElementById("filterButton");
+// const filterContainer = document.querySelector(".filters");
+
+// const itemTitle = document.querySelector("#filterByTitle")
+// const minPrice = document.querySelector("#filterMinimum")
+// const maxPrice = document.querySelector("#filterMaximum")
+// const typeInput = document.querySelector("#filterByType")
+// const applyBtn = document.querySelector("#filterReady")
+// const filterArtists = document.querySelector("#filterByArtist")
+
+// filterButton.addEventListener("click", () => {
+//     filterButton.classList.add("hidden");
+//     filterContainer.classList.remove("hidden");
+//     cardWrapper.classList.add("hidden");
+// });
+
+// itemTypes.forEach((type) => {
+//     const option = document.createElement("option");
+//     option.value = type;
+//     option.innerText = type;
+//     typeInput.appendChild(option);
+// })
+
+
+// // ----------
+
+// const storageFilterValues = () => {// Stores all values from the filters in LS
+//     let filterValues = {
+//         itemTitle: itemTitle.value,
+//         artist: filterArtists.value,
+//         minPrice: minPrice.value,
+//         maxPrice: maxPrice.value,
+//         type: typeInput.value
+//     }
+//     localStorage.setItem("filter", JSON.stringify(filterValues))
+// }
+
+// const getItem = (key) => { // Gets values from local storage
+//     let item = JSON.parse(localStorage.getItem(key))
+//     return item
+// }
+
+// const filterCards = () => {
+//     const filterV = getItem("filter") // Gets the values of filters from LC
+
+//     const filteredItems = publishedItems.filter(
+//         (item) =>
+//             (filterV.itemTitle ? item.title.toLowerCase()
+//                 .includes(filterV.itemTitle.toLowerCase()) : true) &&
+//             (filterV.artist ? item.artist === filterV.artist : true) &&
+//             (filterV.minPrice ? item.price >= filterV.minPrice : true) &&
+//             (filterV.maxPrice ? item.price <= filterV.maxPrice : true) &&
+//             (filterV.typeInput ? item.typeInput === filterV.typeInput : true)
+//     )
+
+//     filteredItems.forEach((item, index) => {
+//         renderCard(cardWrapper, item, index);
+//     });
+
+//     localStorage.setItem("filtering", false)  // After filtering the cards toggle the filter flag
+// }
+
+// // applyBtn.addEventListener("click", () => {
+// //     cardWrapper.innerHTML = "";
+// //     filterCards()
+// //     localStorage.setItem("filtering", true) //Toggle the filter flag to true
+// //     location.reload() //
+// // })
+
+// applyBtn.addEventListener("click", () => {
+//     filterContainer.classList.add("hidden");
+//     filterButton.classList.remove("hidden");
+//     cardWrapper.classList.remove("hidden");
+
+//     cardWrapper.innerHTML = "";
+//     filterCards()
+//     localStorage.setItem("filtering", true) //Toggle the filter flag to true
+//     location.reload() //
+// });
+
 const filterButton = document.getElementById("filterButton");
 const filterContainer = document.querySelector(".filters");
-const filterReadyButton = document.getElementById("filterReady");
+const closeFilterContaier = document.getElementById('closeBtn');
 
-const titleInput = document.getElementById("filterByTitle");
-const artistInput = document.getElementById("filterByArtist");
-const priceInputMin = document.getElementById("filterMinimum");
-const priceInputMax = document.getElementById("filterMaximum");
-const typeInput = document.getElementById("filterByType");
+const itemTitle = document.querySelector("#filterByTitle");
+const minPrice = document.querySelector("#filterMinimum");
+const maxPrice = document.querySelector("#filterMaximum");
+const typeInput = document.querySelector("#filterByType");
+const applyBtn = document.querySelector("#filterReady");
+const filterArtists = document.querySelector("#filterByArtist");
+
+const clearInputs = () => {
+    itemTitle.value = "";
+    filterArtists.value = "";
+    minPrice.value = "";
+    maxPrice.value = "";
+    typeInput.value = "";
+}
 
 filterButton.addEventListener("click", () => {
     filterButton.classList.add("hidden");
@@ -48,15 +141,74 @@ filterButton.addEventListener("click", () => {
     cardWrapper.classList.add("hidden");
 });
 
-filterReadyButton.addEventListener("click", () => {
-    filterContainer.classList.add("hidden");
-    filterButton.classList.remove("hidden");
-    cardWrapper.classList.remove("hidden");
-});
-
 itemTypes.forEach((type) => {
     const option = document.createElement("option");
     option.value = type;
     option.innerText = type;
     typeInput.appendChild(option);
-})
+});
+
+const storageFilterValues = () => {
+    let filterValues = {
+        itemTitle: itemTitle.value,
+        artist: filterArtists.value,
+        minPrice: minPrice.value,
+        maxPrice: maxPrice.value,
+        type: typeInput.value,
+    };
+    localStorage.setItem("filter", JSON.stringify(filterValues));
+};
+
+const getItem = (key) => {
+    let item = JSON.parse(localStorage.getItem(key));
+    return item;
+};
+
+const filterCards = () => {
+    let filterV = getItem("filter");
+
+    const filteredItems = publishedItems.filter(
+        (item) =>
+            (filterV.itemTitle
+                ? item.title.toLowerCase().includes(filterV.itemTitle.toLowerCase())
+                : true) &&
+            (filterV.artist ? item.artist === filterV.artist : true) &&
+            (filterV.minPrice ? item.price >= filterV.minPrice : true) &&
+            (filterV.maxPrice ? item.price <= filterV.maxPrice : true) &&
+            (filterV.typeInput ? item.typeInput === filterV.typeInput : true)
+    );
+
+    if(filteredItems.length === 0) {
+        alert("No items found with the filters or no filters added!")
+        renderAllCards();
+    } else {
+        filteredItems.forEach((item, index) => {
+            renderCard(cardWrapper, item, index);
+        });
+    }
+
+
+    localStorage.setItem("filtering", false);
+};
+
+applyBtn.addEventListener("click", () => {
+    filterContainer.classList.add("hidden");
+    filterButton.classList.remove("hidden");
+    cardWrapper.classList.remove("hidden");
+    storageFilterValues();
+
+    cardWrapper.innerHTML = "";
+
+    filterCards();
+
+    clearInputs();
+    
+    // Store the filter values in localStorage
+
+    localStorage.setItem("filtering", true);
+});
+
+closeFilterContaier.addEventListener("click", () => {
+    filterContainer
+});
+

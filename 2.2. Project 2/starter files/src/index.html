@@ -251,9 +251,7 @@
         }">${item.description}</p>
         </div>
             </div> -->
-            <a id="filterButton" class="cursor-pointer">
-                <img src="../img/filterBtn.svg" alt="filter button" class="fixed right-2 bottom-2 w-16">
-            </a>
+            
         </div>
         <div class="filters w-screen h-screen bg-backgroundDark text-backgroundLight absolute z-10 top-0 hidden">
             <div class="filter-container">
@@ -295,7 +293,27 @@
             <a id="filterReady" class="cursor-pointer">
                 <img src="../img/filterReady.svg" alt="filter button" class="fixed right-2 bottom-2 w-16">
             </a>
+            <a id="closeBtn" href="#" class="absolute top-5 right-5">
+                <img src="../img/close-cross.svg" alt="">
+            </a>
         </div>
+        <a id="filterButton" class="cursor-pointer">
+            <img src="../img/filterBtn.svg" alt="filter button" class="fixed right-2 bottom-2 w-16">
+        </a>
+    </section>
+    <section id="artists">
+        <nav class="w-screen bg-backgroundLight relative h-20">
+            <div class="absolute">
+                <div class="flex">
+                    <a href="#" class="logo">
+                        <img src="../img/Logo.png" alt="" class="w-28">
+                    </a>
+                    <h3 class="font-reenie text-4xl text-backgroundDark mt-4" id="artistsName"></h3>
+                </div>
+            </div>
+            <img src="../img/ri_auction-fill.svg" alt="Auction icon"
+                class="absolute right- top-1/2 transform -translate-y-1/2 right-5">
+        </nav>
     </section>
 
     <script src="../Data/data.js"></script>

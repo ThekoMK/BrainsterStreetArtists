@@ -594,12 +594,20 @@ video {
   top: 50%;
 }
 
-.z-30{
-  z-index: 30;
+.top-2{
+  top: 0.5rem;
+}
+
+.top-5{
+  top: 1.25rem;
 }
 
 .z-10{
   z-index: 10;
+}
+
+.z-30{
+  z-index: 30;
 }
 
 .m-0{
