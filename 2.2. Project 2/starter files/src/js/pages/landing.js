@@ -1,7 +1,6 @@
 import {items} from "../../../Data/data.js"
 
 export const ARTIST_NAMES_SESSION_KEY = "artistNames";
-export const CHOSEN_ARTIST_NAME_SESSION_KEY = "chosenArtistName";
 
 export const ITEMS_SESSION_KEY = "artistsItems";
 

@@ -8,6 +8,7 @@ module.exports = {
         backgroundDark: '#A16A5E',
         backgroundLight2: "#EDD5BB",
         cardBackground: '#E09686',
+        cardBackground2: '#D44C2E',
       },
       fontFamily: {
         reenie: ['Reenie Beanie', 'cursive'],

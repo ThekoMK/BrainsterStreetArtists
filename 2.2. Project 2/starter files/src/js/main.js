@@ -1,12 +1,13 @@
 import { fetchArtists } from "./pages/landing.js";
 import { populateVisitorsListingPage } from "./pages/visitors-listing.js";
 import { populateVisitorsHomePage } from "./pages/visitors-homepage.js";
+import { joinAsArtist, checkArtist } from "./pages/artists-homepage.js";
 
 const PAGE_SECTION = ".page-section";
 const LANDING_PAGE_ROUTE_ID = "#home";
 const VISITOR_PAGE_ROUTE_ID = "#visitor";
 const VISITOR_LISTING_ROUTE_ID = "#visitorListing";
-const ARTIST_HOMEPAGE_ROUTE_ID = "#artist";
+export const ARTIST_HOMEPAGE_ROUTE_ID = "#artists";
 
 const ALLOWED_ROUTES = [
     LANDING_PAGE_ROUTE_ID,
@@ -15,24 +16,16 @@ const ALLOWED_ROUTES = [
     ARTIST_HOMEPAGE_ROUTE_ID,
 ];
 
-// fetch("https://jsonplaceholder.typicode.com/users")
-//     .then((response) => response.json())
-//     .then((data) => {
-//         let allArtists = data.map((obj) => obj.name);
-//         renderOptions(allArtists, selectArtist);
-//         renderOptions(allArtists, filterArtists);
-//         renderOptions(itemTypes, typeInput);
-//     });
 
 document.addEventListener("click", (e) => {
     if (e.target.closest("#joinAsVisitor")) {
-        location.hash = "visitor";
+        location.hash = VISITOR_PAGE_ROUTE_ID;
     } else if (
         e.target.matches(".find-now-btn") ||
         e.target.matches(".slide img")
     ) {
-        location.hash = "visitorListing";
-    }
+        location.hash = VISITOR_LISTING_ROUTE_ID;
+    } 
 });
 
 const handeRoute = () => {
@@ -47,12 +40,13 @@ const handeRoute = () => {
         .forEach((pageSection) => (pageSection.style.display = "none"));
 
     const currentHashSection = document.querySelector(currentHash);
+    
     currentHashSection.style.display = "block";
 
     switch (currentHash) {
         case LANDING_PAGE_ROUTE_ID:
             fetchArtists();
-            console.log("Landing page");
+            checkArtist();
             break;
         case VISITOR_PAGE_ROUTE_ID:
             populateVisitorsHomePage();
@@ -61,7 +55,7 @@ const handeRoute = () => {
             populateVisitorsListingPage();
             break;
         case ARTIST_HOMEPAGE_ROUTE_ID:
-            // function
+            joinAsArtist();
             break;
         default:
             break;
