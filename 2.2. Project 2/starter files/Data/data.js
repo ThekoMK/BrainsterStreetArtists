@@ -1,6 +1,6 @@
-const itemTypes = ['painting', 'sculpture', 'digital', 'custom']
+export const itemTypes = ['painting', 'sculpture', 'digital', 'custom']
 
-const items = [
+export const items = [
     {
         "id": 1,
         "title": "Meet me where the wild things grow",

@@ -10,7 +10,7 @@
 </head>
 
 <body class="bg-backgroundLight">
-    <section id="home" class="bg-backgroundLight w-screen">
+    <section id="home" class="bg-backgroundLight w-screen page-section">
         <nav class="w-screen bg-backgroundLight shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
             <h2 class="font-reenie text-3xl text-center p-4 text-backgroundDark">Street ARTists</h2>
         </nav>
@@ -38,7 +38,7 @@
             </div>
         </main>
     </section>
-    <section id="visitor" class="bg-backgroundLight h-screen">
+    <section id="visitor" class="bg-backgroundLight h-screen page-section">
         <nav class="w-screen bg-backgroundLight relative h-20 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
             <div class="absolute">
                 <div class="flex">
@@ -220,7 +220,7 @@
             </div>
         </div>
     </section>
-    <section id="visitor/listing" class="bg-backgroundLight2">
+    <section id="visitorListing" class="bg-backgroundLight2 page-section">
         <nav class="w-screen bg-backgroundLight relative h-20">
             <div class="absolute">
                 <div class="flex">
@@ -235,7 +235,7 @@
                 class="absolute right- top-1/2 transform -translate-y-1/2 right-5">
             </a>
         </nav>
-        <div id="card-container" class="flex flex-wrap gap-5 relative">
+        <div id="card-container" class="flex flex-wrap gap-5 relative pb-3">
             <!-- <div class="w-full mt-5 bg-backgroundDark">
                 <a href="#">
             <img class="w-full" src="${item.image}" alt="" />
@@ -266,7 +266,7 @@
                 <div class="flex flex-col">
                     <label for="filterByArtist" class="pt-3 pb-3 font-thin text-2xl">By Artist</label>
                     <select name="filterByArtist" id="filterByArtist" class="w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
-                        <option value="Choose" selected disabled>Choose</option>
+                        <option value="Choose" selected>Choose</option>
                     </select>
                 </div>
                 <div class="bg-backgroundLight h-[3px] w-full my-5 border rounded"></div>
@@ -287,7 +287,7 @@
                 <div class="flex flex-col">
                     <label for="filterByType" class="pt-3 pb-3 font-thin text-2xl">By Type</label>
                     <select name="filterByType" id="filterByType" class="overflow-auto w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
-                        <option value="Choose" selected disabled>Choose</option>
+                        <option value="Choose" selected>Choose</option>
                     </select>
                 </div>
                 <div class="bg-backgroundLight h-[3px] w-full my-5 border rounded"></div>
@@ -295,15 +295,15 @@
             <a id="filterReady" class="cursor-pointer">
                 <img src="../img/filterReady.svg" alt="filter button" class="fixed right-2 bottom-2 w-16">
             </a>
-            <a id="closeBtn" href="#" class="absolute top-5 right-5">
-                <img src="../img/close-cross.svg" alt="">
+            <a id="closeBtn" class="absolute top-5 right-5">
+                <img src="../img/close-cross.svg" alt="Cross image">
             </a>
         </div>
         <a id="filterButton" class="cursor-pointer">
             <img src="../img/filterBtn.svg" alt="filter button" class="fixed right-2 bottom-2 w-16">
         </a>
     </section>
-    <section id="artists">
+    <section id="artists" class="page-section">
         <nav class="w-screen bg-backgroundLight relative h-20">
             <div class="absolute">
                 <div class="flex">
@@ -320,12 +320,12 @@
         </nav>
     </section>
 
-    <script src="../Data/data.js"></script>
+    <!-- <script src="../Data/data.js"></script>
     <script src="./js/pages/landing.js"></script>
     <script src="./js/pages/visitors-listing.js"></script>
     <script src="./js/pages/visitors-homepage.js"></script>
-    <script src="./js/pages/artists-homepage.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/pages/artists-homepage.js"></script> -->
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

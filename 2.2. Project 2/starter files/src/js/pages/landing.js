@@ -1,24 +1,40 @@
-const chosenArtist = document.getElementById('chooseAnArtist');
+import {items} from "../../../Data/data.js"
 
-// Function to fetch users from the API and populate them in the select element
-async function fetchUsers(selectElement) {
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users');
-        const users = await response.json();
+export const ARTIST_NAMES_SESSION_KEY = "artistNames";
+export const CHOSEN_ARTIST_NAME_SESSION_KEY = "chosenArtistName";
 
-        // Iterate through each user and create an option element for the select
-        users.forEach(user => {
-            const option = document.createElement('option');
-            option.value = user.name;
-            option.textContent = user.name;
-            selectElement.appendChild(option);
-            // filterArtists.appendChild(option);
-        });
-    } catch (error) {
-        console.error('Error fetching users:', error);
+export const ITEMS_SESSION_KEY = "artistsItems";
+
+// const selectArtist = document.getElementById("chooseAnArtist");
+
+export const fetchArtists = () => {
+
+    if(!localStorage.getItem(ITEMS_SESSION_KEY)) {
+        const serializedItems = JSON.stringify(items);
+        localStorage.setItem(ITEMS_SESSION_KEY, serializedItems);
     }
+
+    const selectArtistDropdown = document.getElementById("chooseAnArtist");
+    let artistNames = localStorage.getItem(ARTIST_NAMES_SESSION_KEY);
+    if(!artistNames) {
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(result => result.json())
+        .then(artists => {
+            artistNames = artists.map(artist => artist.name);
+            localStorage.setItem(ARTIST_NAMES_SESSION_KEY, JSON.stringify(artistNames));
+        })
+    }
+
+    const artistNamesArray = JSON.parse(artistNames);
+
+    renderOptions(artistNamesArray, selectArtistDropdown);
 }
 
-// Call the function to fetch users and populate the select element
-fetchUsers(chosenArtist);
 
+export const renderOptions = (array, selectElement) => {
+    array.forEach(item => {
+        const option = document.createElement('option');
+        option.textContent = item;
+        selectElement.appendChild(option);
+    });
+}
