@@ -67,3 +67,14 @@ const handeRoute = () => {
 
 window.addEventListener("hashchange", handeRoute);
 window.addEventListener("load", handeRoute);
+
+const menu = document.getElementById("hamburgerMenu");
+const actualMenu = document.getElementById("actualMenu");
+
+menu.addEventListener("click", () => {
+    if (actualMenu.classList.contains("active-hamburger-menu")){
+        actualMenu.style.top = "-100%";
+    } else {
+        actualMenu.classList.add("active-hamburger-menu");
+    }
+})

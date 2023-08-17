@@ -211,3 +211,7 @@ body {
 .days-buttons .active {
     background-color: #D44C2E;
 }
+
+.active-hamburger-menu {
+    top: 0;
+}

@@ -305,7 +305,7 @@
     </section>
     <section id="artists" class="page-section">
         <nav class="w-screen bg-backgroundLight relative h-20">
-            <div class="absolute">
+            <div class="absolute z-10">
                 <div class="flex">
                     <a href="#" class="logo">
                         <img src="../img/Logo.png" alt="" class="w-28">
@@ -313,12 +313,10 @@
                     <h3 class="font-reenie text-3xl text-backgroundDark mt-4" id="artistsName"></h3>
                 </div>
             </div>
-            <a href="" id="hamburgerMenu">
-                <img src="../img/namburgermenu.svg" alt="Hamburger-Menu" 
+                <img id="hamburgerMenu" src="../img/namburgermenu.svg" alt="Hamburger-Menu" 
                 class="absolute right- top-1/2 transform -translate-y-1/2 right-5">
-            </a>
         </nav>
-        <div class="bg-backgroundLight2 w-screen pb-3">
+        <div class="bg-backgroundLight2 w-screen pb-3 relative">
             <div class="w-[90%] mx-auto">
                 <div class="text-backgroundLight flex flex-wrap me-[-20px] ">
                     <div class="w-1/2">
@@ -342,6 +340,13 @@
                     </div>
                 </div>
             </div>
+            <div class="w-screen absolute active-hamburger-menu bg-backgroundDark" id="actualMenu">
+            <ul class="text-center text-3xl font-thin text-backgroundLight pt-5 pb-5">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Items</a></li>
+                <li><a href="#">Auction</a></li>
+            </ul>
+        </div>
         </div>
         <div class="w-[90%] mx-auto">
             <div class="w-full">
@@ -356,7 +361,8 @@
             <div class="px-5 my-11 mx-auto max-w-screen-lg min-h-[350px] h-[150%]">
                 <canvas id="myChart"></canvas>
             </div>
-            </div>
+        </div>
+        
     </section>
 
     <!-- <script src="../Data/data.js"></script>
