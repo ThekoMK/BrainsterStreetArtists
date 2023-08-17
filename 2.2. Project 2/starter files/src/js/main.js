@@ -2,12 +2,14 @@ import { fetchArtists } from "./pages/landing.js";
 import { populateVisitorsListingPage } from "./pages/visitors-listing.js";
 import { populateVisitorsHomePage } from "./pages/visitors-homepage.js";
 import { joinAsArtist, checkArtist } from "./pages/artists-homepage.js";
+import { drawChart } from "./pages/chart.js"
 
 const PAGE_SECTION = ".page-section";
 const LANDING_PAGE_ROUTE_ID = "#home";
 const VISITOR_PAGE_ROUTE_ID = "#visitor";
 const VISITOR_LISTING_ROUTE_ID = "#visitorListing";
 export const ARTIST_HOMEPAGE_ROUTE_ID = "#artists";
+
 
 const ALLOWED_ROUTES = [
     LANDING_PAGE_ROUTE_ID,
@@ -56,6 +58,7 @@ const handeRoute = () => {
             break;
         case ARTIST_HOMEPAGE_ROUTE_ID:
             joinAsArtist();
+            drawChart();
             break;
         default:
             break;
@@ -64,14 +67,3 @@ const handeRoute = () => {
 
 window.addEventListener("hashchange", handeRoute);
 window.addEventListener("load", handeRoute);
-
-// window, addEventListener('hashchange', handleRouting);
-// window.addEventListener('load', handleRouting);
-
-// function handleRouting() {
-//     let hash = location.hash;
-//     if (!hash) location.hash = "home";
-//     document.querySelectorAll("section").forEach(section => {
-//         `#${section.id}` !== hash ? section.style.display = "none" : section.style.display = "block";
-//     });
-// }

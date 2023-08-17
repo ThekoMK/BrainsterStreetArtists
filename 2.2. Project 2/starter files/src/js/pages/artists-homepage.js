@@ -1,7 +1,9 @@
 import { ARTIST_HOMEPAGE_ROUTE_ID } from "../main.js";
 import { ITEMS_SESSION_KEY } from "./landing.js";
 
-const CHOSEN_ARTIST_NAME_SESSION_KEY = "chosenArtistName";
+export const LIVE_AUCTIONING_ITEM_STATUS = "LiveAuctionStatus";
+export const CHOSEN_ARTIST_NAME_SESSION_KEY = "chosenArtistName";
+export const CHOSEN_ARTIST_ITEMS_SESSION_KEY = "chosenArtistItems";
 
 const artistsName = document.getElementById("artistsName");
 const chosenArtist = document.getElementById("chooseAnArtist");
@@ -28,12 +30,14 @@ const allItemsArray = JSON.parse(allItems);
 
 const totalItemsSold = document.getElementById("totalItemsSold");
 const totalIncome = document.getElementById("totalIncome");
+const liveBid = document.getElementById("liveBid");
 
 export const joinAsArtist = () => {
     const chosenArtistName = localStorage.getItem(CHOSEN_ARTIST_NAME_SESSION_KEY);
     artistsName.innerHTML = chosenArtistName;
 
     const chosenArtistItems = allItemsArray.filter(item => item.artist === chosenArtistName)
+    localStorage.setItem(CHOSEN_ARTIST_ITEMS_SESSION_KEY, JSON.stringify(chosenArtistItems));
 
     let items = chosenArtistItems.length;
     let itemsSold = 0
@@ -45,9 +49,18 @@ export const joinAsArtist = () => {
             itemsSold = itemsSold + 1
             priceSold = priceSold + item.price
         }
+
+        if(item.isAuctioning) {
+            localStorage.setItem(LIVE_AUCTIONING_ITEM_STATUS, true);
+            liveBid.innerHTML = `$${item.price}`;
+        } else {
+            liveBid.innerHTML = "Currently not auctioning"
+            localStorage.setItem(LIVE_AUCTIONING_ITEM_STATUS, false);
+        }
+        
+
     });
 
-    console.log(priceSold)
     totalItemsSold.innerHTML = `${itemsSold}/${items}`;
     totalIncome.innerHTML = `$${priceSold}`; 
 }
