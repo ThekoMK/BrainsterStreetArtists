@@ -343,9 +343,20 @@
                 </div>
             </div>
         </div>
-        <div>
-            <canvas id="myChart"></canvas>
-        </div>
+        <div class="w-[90%] mx-auto">
+            <div class="w-full">
+                <p class="py-3 text-backgroundDark text-2xl font-thin text-left">Display my income for last</p>
+                <div class="text-backgroundLight flex justify-between days-buttons">
+                    <button id="last7" class="bg-backgroundDark py-1 px-4 border rounded">7 days</button>
+                    <button id="last14" class="bg-backgroundDark py-1 px-4 border rounded active">14 days</button>
+                    <button id="last30" class="bg-backgroundDark py-1 px-4 border rounded">1 month</button>
+                    <button id="lastYear" class="bg-backgroundDark py-1 px-4 border rounded">1 year</button>
+                </div>
+            </div>
+            <div class="px-5 my-11 mx-auto max-w-screen-lg min-h-[350px] h-[150%]">
+                <canvas id="myChart"></canvas>
+            </div>
+            </div>
     </section>
 
     <!-- <script src="../Data/data.js"></script>

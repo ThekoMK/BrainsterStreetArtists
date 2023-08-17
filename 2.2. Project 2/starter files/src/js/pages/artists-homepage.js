@@ -15,7 +15,6 @@ export const checkArtist = () => {
             chosenArtist.classList.add("border-4")
             setTimeout(() => {
                 chosenArtist.classList.remove("border-4")
-                console.log(e.target.value)
             }, 1000)
         } else {
             location.hash = ARTIST_HOMEPAGE_ROUTE_ID;
