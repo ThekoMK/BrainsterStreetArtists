@@ -61,5 +61,24 @@ export const joinAsArtist = () => {
     });
 
     totalItemsSold.innerHTML = `${itemsSold}/${items}`;
-    totalIncome.innerHTML = `$${priceSold}`; 
+    totalIncome.innerHTML = `$${priceSold}`;
+}
+
+export const hamburgerMenu = () => {
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const hamburgerMenuItems = document.querySelector(".menu-container");
+    let isMenuOpen = false;
+
+    hamburgerMenu.addEventListener("click", (e) => {
+        if(!isMenuOpen) {
+            hamburgerMenuItems.classList.add("active-hamburger-menu");
+            console.log(hamburgerMenuItems)
+            isMenuOpen = true;
+        } else {
+            hamburgerMenuItems.classList.remove("active-hamburger-menu");
+            console.log(hamburgerMenuItems)
+            isMenuOpen = false;
+        }
+    
+    })
 }

@@ -221,7 +221,7 @@
         </div>
     </section>
     <section id="visitorListing" class="bg-backgroundLight2 page-section">
-        <nav class="w-screen bg-backgroundLight relative h-20">
+        <nav class="w-screen bg-backgroundLight relative h-20 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
             <div class="absolute">
                 <div class="flex">
                     <a href="#" class="logo">
@@ -304,16 +304,16 @@
         </a>
     </section>
     <section id="artists" class="page-section">
-        <nav class="w-screen bg-backgroundLight relative h-20">
+        <nav class="w-screen bg-backgroundLight relative h-20 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
             <div class="absolute z-10">
                 <div class="flex">
                     <a href="#" class="logo">
-                        <img src="../img/Logo.png" alt="" class="w-28">
+                        <img src="../img/Logo.png" alt="Logo" class="w-28">
                     </a>
                     <h3 class="font-reenie text-3xl text-backgroundDark mt-4 artistsName"></h3>
                 </div>
             </div>
-                <img src="../img/namburgermenu.svg" alt="Hamburger-Menu" 
+                <img id="hamburger1" src="../img/namburgermenu.svg" alt="Hamburger-Menu" 
                 class="absolute right- top-1/2 transform -translate-y-1/2 right-5 hamburger-menu">
         </nav>
         <div class="bg-backgroundLight2 w-screen pb-3 relative">
@@ -365,24 +365,27 @@
         
     </section>
     <section id="artistsItems" class="page-section">
-        <nav class="w-screen bg-backgroundLight relative h-20">
+        <nav class="w-screen bg-backgroundLight relative h-20 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
             <div class="absolute z-10">
                 <div class="flex">
                     <a href="#" class="logo">
-                        <img src="../img/Logo.png" alt="" class="w-28">
+                        <img src="../img/Logo.png" alt="Logo" class="w-28">
                     </a>
                     <h3 class="font-reenie text-3xl text-backgroundDark mt-4 artistsName"></h3>
                 </div>
             </div>
                 <img src="../img/namburgermenu.svg" alt="Hamburger-Menu" 
-                class="absolute right- top-1/2 transform -translate-y-1/2 right-5 menu-container">
+                class="absolute right- top-1/2 transform -translate-y-1/2 right-5 hamburger-menu2">
         </nav>
-        <ul class="text-center text-3xl font-thin text-backgroundLight pt-5 pb-5">
+        <div class="relative w-screen">
+            <div class="w-screen absolute top-0 bg-backgroundDark menu-container2">
+            <ul class="text-center text-3xl font-thin text-backgroundLight pt-5 pb-5">
                 <li><a href="#artists">Home</a></li>
                 <li><a href="#artistsItems">Items</a></li>
                 <li><a href="#">Auction</a></li>
             </ul>
-            <p>Helllo</p>
+        </div>
+        </div>
     </section>
 
     <!-- <script src="../Data/data.js"></script>
