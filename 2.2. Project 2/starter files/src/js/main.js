@@ -2,13 +2,14 @@ import { fetchArtists } from "./pages/landing.js";
 import { populateVisitorsListingPage } from "./pages/visitors-listing.js";
 import { populateVisitorsHomePage } from "./pages/visitors-homepage.js";
 import { joinAsArtist, checkArtist } from "./pages/artists-homepage.js";
-import { drawChart } from "./pages/chart.js"
+import { drawChart } from "./pages/chart.js";
 
 const PAGE_SECTION = ".page-section";
 const LANDING_PAGE_ROUTE_ID = "#home";
 const VISITOR_PAGE_ROUTE_ID = "#visitor";
 const VISITOR_LISTING_ROUTE_ID = "#visitorListing";
 export const ARTIST_HOMEPAGE_ROUTE_ID = "#artists";
+const ARTISTS_ITEMS_ROUTE_ID = "#artistsItems";
 
 
 const ALLOWED_ROUTES = [
@@ -16,6 +17,7 @@ const ALLOWED_ROUTES = [
     VISITOR_PAGE_ROUTE_ID,
     VISITOR_LISTING_ROUTE_ID,
     ARTIST_HOMEPAGE_ROUTE_ID,
+    ARTISTS_ITEMS_ROUTE_ID
 ];
 
 
@@ -68,13 +70,19 @@ const handeRoute = () => {
 window.addEventListener("hashchange", handeRoute);
 window.addEventListener("load", handeRoute);
 
-const menu = document.getElementById("hamburgerMenu");
-const actualMenu = document.getElementById("actualMenu");
+const menu = document.querySelector(".hamburger-menu");
+const actualMenu = document.querySelector(".menu-container");
 
 menu.addEventListener("click", () => {
     if (actualMenu.classList.contains("active-hamburger-menu")){
-        actualMenu.style.top = "-100%";
+        actualMenu.classList.remove("active-hamburger-menu");
     } else {
         actualMenu.classList.add("active-hamburger-menu");
+    }
+});
+
+actualMenu.addEventListener("click", (e) => {
+    if(e.target.matches("a")) {
+        actualMenu.classList.remove("active-hamburger-menu");
     }
 })

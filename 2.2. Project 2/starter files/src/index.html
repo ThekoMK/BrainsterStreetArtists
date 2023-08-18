@@ -310,11 +310,11 @@
                     <a href="#" class="logo">
                         <img src="../img/Logo.png" alt="" class="w-28">
                     </a>
-                    <h3 class="font-reenie text-3xl text-backgroundDark mt-4" id="artistsName"></h3>
+                    <h3 class="font-reenie text-3xl text-backgroundDark mt-4 artistsName"></h3>
                 </div>
             </div>
-                <img id="hamburgerMenu" src="../img/namburgermenu.svg" alt="Hamburger-Menu" 
-                class="absolute right- top-1/2 transform -translate-y-1/2 right-5">
+                <img src="../img/namburgermenu.svg" alt="Hamburger-Menu" 
+                class="absolute right- top-1/2 transform -translate-y-1/2 right-5 hamburger-menu">
         </nav>
         <div class="bg-backgroundLight2 w-screen pb-3 relative">
             <div class="w-[90%] mx-auto">
@@ -340,10 +340,10 @@
                     </div>
                 </div>
             </div>
-            <div class="w-screen absolute active-hamburger-menu bg-backgroundDark" id="actualMenu">
+            <div class="w-screen absolute top-0 bg-backgroundDark menu-container">
             <ul class="text-center text-3xl font-thin text-backgroundLight pt-5 pb-5">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Items</a></li>
+                <li><a href="#artists">Home</a></li>
+                <li><a href="#artistsItems">Items</a></li>
                 <li><a href="#">Auction</a></li>
             </ul>
         </div>
@@ -363,6 +363,26 @@
             </div>
         </div>
         
+    </section>
+    <section id="artistsItems" class="page-section">
+        <nav class="w-screen bg-backgroundLight relative h-20">
+            <div class="absolute z-10">
+                <div class="flex">
+                    <a href="#" class="logo">
+                        <img src="../img/Logo.png" alt="" class="w-28">
+                    </a>
+                    <h3 class="font-reenie text-3xl text-backgroundDark mt-4 artistsName"></h3>
+                </div>
+            </div>
+                <img src="../img/namburgermenu.svg" alt="Hamburger-Menu" 
+                class="absolute right- top-1/2 transform -translate-y-1/2 right-5 menu-container">
+        </nav>
+        <ul class="text-center text-3xl font-thin text-backgroundLight pt-5 pb-5">
+                <li><a href="#artists">Home</a></li>
+                <li><a href="#artistsItems">Items</a></li>
+                <li><a href="#">Auction</a></li>
+            </ul>
+            <p>Helllo</p>
     </section>
 
     <!-- <script src="../Data/data.js"></script>

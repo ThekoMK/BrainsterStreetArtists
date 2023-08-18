@@ -5,7 +5,7 @@ export const LIVE_AUCTIONING_ITEM_STATUS = "LiveAuctionStatus";
 export const CHOSEN_ARTIST_NAME_SESSION_KEY = "chosenArtistName";
 export const CHOSEN_ARTIST_ITEMS_SESSION_KEY = "chosenArtistItems";
 
-const artistsName = document.getElementById("artistsName");
+const artistsName = document.querySelector(".artistsName");
 const chosenArtist = document.getElementById("chooseAnArtist");
 const joinAsArtistDiv = document.getElementById("joinAsArtist");
 

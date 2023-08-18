@@ -76,7 +76,6 @@ export function drawChart() {
                     let sum = 0
                     soldItems.forEach(item => {
                         if (formatDate(item.dateSold) === label) {
-                            console.log(formatDate(item.dateSold) === label)
                             sum = item.priceSold
                         }
                     });
