@@ -232,7 +232,7 @@
             </div>
             <a href="#" id="auctionBtn">
                 <img src="../img/ri_auction-fill.svg" alt="Auction icon"
-                class="absolute right- top-1/2 transform -translate-y-1/2 right-5">
+                    class="absolute right- top-1/2 transform -translate-y-1/2 right-5">
             </a>
         </nav>
         <div id="card-container" class="flex flex-wrap gap-5 relative pb-3">
@@ -253,19 +253,21 @@
         }">${item.description}</p>
         </div>
             </div> -->
-            
+
         </div>
         <div class="filters w-screen h-screen bg-backgroundDark text-backgroundLight absolute z-10 top-0 hidden">
             <div class="filter-container">
                 <h2 class="text-3xl pt-6 font-roboto">Filter by</h2>
                 <div class="flex flex-col">
                     <label for="filterByTitle" class="pt-5 pb-3 font-thin text-2xl">By Item Title</label>
-                    <input id="filterByTitle" type="text" placeholder="Item Title" class="w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
+                    <input id="filterByTitle" type="text" placeholder="Item Title"
+                        class="w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
                 </div>
                 <div class="bg-backgroundLight h-[3px] w-full my-5 border rounded"></div>
                 <div class="flex flex-col">
                     <label for="filterByArtist" class="pt-3 pb-3 font-thin text-2xl">By Artist</label>
-                    <select name="filterByArtist" id="filterByArtist" class="w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
+                    <select name="filterByArtist" id="filterByArtist"
+                        class="w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
                         <option value="Choose" selected>Choose</option>
                     </select>
                 </div>
@@ -275,18 +277,21 @@
                     <div class="w-full flex md:flex-col justify-between">
                         <div class="">
                             <label for="filterMinimum">Min:</label>
-                            <input type="number" name="minimum" id="filterMinimum" placeholder="Label" class="w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
+                            <input type="number" name="minimum" id="filterMinimum" placeholder="Label"
+                                class="w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
                         </div>
                         <div class="ms-3 md:ms-0">
                             <label for="filterMaximum">Max:</label>
-                            <input type="number" name="maximum" id="filterMaximum" placeholder="Label" class="md:mt-8 w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
+                            <input type="number" name="maximum" id="filterMaximum" placeholder="Label"
+                                class="md:mt-8 w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
                         </div>
                     </div>
                 </div>
                 <div class="bg-backgroundLight h-[3px] w-full my-5 border rounded"></div>
                 <div class="flex flex-col">
                     <label for="filterByType" class="pt-3 pb-3 font-thin text-2xl">By Type</label>
-                    <select name="filterByType" id="filterByType" class="overflow-auto w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
+                    <select name="filterByType" id="filterByType"
+                        class="overflow-auto w-28 bg-backgroundDark border border-backgroundLight placeholder:text-backgroundLight placeholder:font-thin rounded outline-none">
                         <option value="Choose" selected>Choose</option>
                     </select>
                 </div>
@@ -313,7 +318,7 @@
                     <h3 class="font-reenie text-3xl text-backgroundDark mt-4 artistsName"></h3>
                 </div>
             </div>
-                <img id="hamburger1" src="../img/namburgermenu.svg" alt="Hamburger-Menu" 
+            <img id="hamburger1" src="../img/namburgermenu.svg" alt="Hamburger-Menu"
                 class="absolute right- top-1/2 transform -translate-y-1/2 right-5 hamburger-menu">
         </nav>
         <div class="bg-backgroundLight2 w-screen pb-3 relative">
@@ -327,26 +332,26 @@
                     </div>
                     <div class="w-1/2">
                         <div class="card bg-backgroundDark text-center py-4">
-                        <p class="text-2xl">Total Income</p>
-                        <span class="text-4xl" id="totalIncome">$1700</span>
+                            <p class="text-2xl">Total Income</p>
+                            <span class="text-4xl" id="totalIncome">$1700</span>
                         </div>
                     </div>
                     <div class="w-full">
                         <div class="card bg-cardBackground2 text-center py-4">
-                        <p class="text-2xl">Live Auctioning Item</p>
-                        <span class="text-3xl" id="liveBid">$1200</span>
-                        <p class="text-2xl">current bid</p>
+                            <p class="text-2xl">Live Auctioning Item</p>
+                            <span class="text-3xl" id="liveBid">$1200</span>
+                            <p class="text-2xl">current bid</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="w-screen absolute top-0 bg-backgroundDark menu-container">
-            <ul class="text-center text-3xl font-thin text-backgroundLight pt-5 pb-5">
-                <li><a href="#artists">Home</a></li>
-                <li><a href="#artistsItems">Items</a></li>
-                <li><a href="#">Auction</a></li>
-            </ul>
-        </div>
+                <ul class="text-center text-3xl font-thin text-backgroundLight pt-5 pb-5">
+                    <li><a href="#artists">Home</a></li>
+                    <li><a href="#artistsItems">Items</a></li>
+                    <li><a href="#">Auction</a></li>
+                </ul>
+            </div>
         </div>
         <div class="w-[90%] mx-auto">
             <div class="w-full">
@@ -362,7 +367,7 @@
                 <canvas id="myChart"></canvas>
             </div>
         </div>
-        
+
     </section>
     <section id="artistsItems" class="page-section">
         <nav class="w-screen bg-backgroundLight relative h-20 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
@@ -374,17 +379,71 @@
                     <h3 class="font-reenie text-3xl text-backgroundDark mt-4 artistsName"></h3>
                 </div>
             </div>
-                <img src="../img/namburgermenu.svg" alt="Hamburger-Menu" 
+            <img src="../img/namburgermenu.svg" alt="Hamburger-Menu"
                 class="absolute right- top-1/2 transform -translate-y-1/2 right-5 hamburger-menu2">
         </nav>
         <div class="relative w-screen">
             <div class="w-screen absolute top-0 bg-backgroundDark menu-container2">
-            <ul class="text-center text-3xl font-thin text-backgroundLight pt-5 pb-5">
-                <li><a href="#artists">Home</a></li>
-                <li><a href="#artistsItems">Items</a></li>
-                <li><a href="#">Auction</a></li>
-            </ul>
+                <ul class="text-center text-3xl font-thin text-backgroundLight pt-5 pb-5">
+                    <li><a href="#artists">Home</a></li>
+                    <li><a href="#artistsItems">Items</a></li>
+                    <li><a href="#">Auction</a></li>
+                </ul>
+            </div>
         </div>
+        <div class="bg-backgroundLight2 w-screen pt-2">
+            <div class=" bg-backgroundLight mt-5">
+                <div class="py-3 px-4">
+                    <div
+                        class="flex justify-center items-center w-full border-2 border-dashed border-backgroundDark py-7">
+                        <p>+ Add new item</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full mt-5 bg-backgroundLight">
+                <img class="w-full h-[200px]" src="../img/1.jpeg" alt="" />
+                <div class="py-1 px-3">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h5 class="text-2xl text-backgroundDark">Item Title</h5>
+                            <small class="text-backgroundDark">18.08.2023</small>
+                        </div>
+                        <span class="px-2 rounded border  bg-backgroundDark text-backgroundLight">500$</span>
+                    </div>
+                    <p class="my-3 font-roboto text-backgroundDark">Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Assumenda, vitae.</p>
+                </div>
+                <div class="w-screen bg-backgroundDark py-3">
+                    <div class="w-full flex justify-around">
+                        <button class="bg-[#1B59AC] text-white py-1 px-4  rounded">Send to Auction</button>
+                        <button class="bg-[#E5E5E5] text-textButton py-1 px-4 rounded">Publish</button>
+                        <button class="bg-cardBackground2 text-backgroundLight py-1 px-4 rounded">Remove</button>
+                        <button class="bg-backgroundLight text-backgroundDark py-1 px-4 rounded">Edit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full mt-5 bg-backgroundLight">
+                <img class="w-full h-[200px]" src="../img/1.jpeg" alt="" />
+                <div class="py-1 px-3">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h5 class="text-2xl text-backgroundDark">Item Title</h5>
+                            <small class="text-backgroundDark">18.08.2023</small>
+                        </div>
+                        <span class="px-2 rounded border  bg-backgroundDark text-backgroundLight">500$</span>
+                    </div>
+                    <p class="my-3 font-roboto text-backgroundDark">Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Assumenda, vitae.</p>
+                </div>
+                <div class="w-screen bg-backgroundDark py-3">
+                    <div class="w-full flex justify-around">
+                        <button class="bg-[#1B59AC] text-white py-1 px-4  rounded">Send to Auction</button>
+                        <button class="bg-[#E5E5E5] text-textButton py-1 px-4 rounded">Publish</button>
+                        <button class="bg-cardBackground2 text-backgroundLight py-1 px-4 rounded">Remove</button>
+                        <button class="bg-backgroundLight text-backgroundDark py-1 px-4 rounded">Edit</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

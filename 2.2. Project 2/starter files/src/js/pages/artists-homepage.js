@@ -79,6 +79,11 @@ export const hamburgerMenu = () => {
             console.log(hamburgerMenuItems)
             isMenuOpen = false;
         }
-    
+    })
+
+    hamburgerMenuItems.addEventListener("click", (e) => {
+        if (e.target.matches("a")) {
+            hamburgerMenuItems.classList.remove("active-hamburger-menu");
+        }
     })
 }

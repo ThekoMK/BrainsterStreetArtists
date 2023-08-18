@@ -15,4 +15,10 @@ export const hamburgerMenuItems = () => {
         }
 
     })
+
+    hamburgerMenuItems.addEventListener("click", (e) => {
+        if(e.target.matches("a")) {
+            hamburgerMenuItems.classList.remove("active-hamburger-menu");
+        }
+    })
 }
