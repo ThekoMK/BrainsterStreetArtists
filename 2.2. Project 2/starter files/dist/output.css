@@ -901,6 +901,11 @@ video {
   background-color: rgb(212 76 46 / var(--tw-bg-opacity));
 }
 
+.bg-unPublishGreen{
+  --tw-bg-opacity: 1;
+  background-color: rgb(27 172 111 / var(--tw-bg-opacity));
+}
+
 .p-0{
   padding: 0px;
 }
@@ -1067,14 +1072,14 @@ video {
   color: rgb(252 235 213 / var(--tw-text-opacity));
 }
 
-.text-white{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .text-textButton{
   --tw-text-opacity: 1;
   color: rgb(90 90 90 / var(--tw-text-opacity));
+}
+
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .shadow-\[0px_2px_2px_0px_rgba\(0\2c 0\2c 0\2c 0\.25\)\]{

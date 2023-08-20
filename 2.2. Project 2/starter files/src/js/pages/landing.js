@@ -25,12 +25,20 @@ export const fetchArtists = () => {
     }
 
     const artistNamesArray = JSON.parse(artistNames);
-
+    
+    selectArtistDropdown.innerHTML = "";
     renderOptions(artistNamesArray, selectArtistDropdown);
 }
 
 
 export const renderOptions = (array, selectElement) => {
+    const chooseOption = document.createElement('option');
+    chooseOption.textContent = "Choose";
+    chooseOption.value = "choose";
+    chooseOption.disabled = true;
+    chooseOption.selected = true;
+    selectElement.appendChild(chooseOption);
+
     array.forEach(item => {
         const option = document.createElement('option');
         option.textContent = item;

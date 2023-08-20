@@ -1,9 +1,9 @@
 import { fetchArtists } from "./pages/landing.js";
 import { populateVisitorsListingPage } from "./pages/visitors-listing.js";
 import { populateVisitorsHomePage } from "./pages/visitors-homepage.js";
-import { joinAsArtist, checkArtist, hamburgerMenu } from "./pages/artists-homepage.js";
+import { joinAsArtist, checkArtist, hamburgerMenu,clearLocalStorage } from "./pages/artists-homepage.js";
 import { drawChart } from "./pages/chart.js";
-import { hamburgerMenuItems } from "./pages/artists-items-page.js"
+import { hamburgerMenuItems, populateArtistItems } from "./pages/artists-items-page.js";
 
 const PAGE_SECTION = ".page-section";
 const LANDING_PAGE_ROUTE_ID = "#home";
@@ -52,6 +52,7 @@ const handeRoute = () => {
         case LANDING_PAGE_ROUTE_ID:
             fetchArtists();
             checkArtist();
+            clearLocalStorage();
             break;
         case VISITOR_PAGE_ROUTE_ID:
             populateVisitorsHomePage();
@@ -66,6 +67,7 @@ const handeRoute = () => {
             break;
         case ARTISTS_ITEMS_ROUTE_ID:
             hamburgerMenuItems();
+            populateArtistItems();
             break;
         default:
             break;

@@ -10,6 +10,7 @@ module.exports = {
         cardBackground: '#E09686',
         cardBackground2: '#D44C2E',
         textButton: '#5A5A5A',
+        unPublishGreen: '#1BAC6F'
       },
       fontFamily: {
         reenie: ['Reenie Beanie', 'cursive'],
