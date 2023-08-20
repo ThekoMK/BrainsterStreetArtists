@@ -23,6 +23,23 @@ export const hamburgerMenuItems = () => {
     })
 }
 
+const togglePublishFunction = (itemId) => {
+    const artistItems = JSON.parse(localStorage.getItem(CHOSEN_ARTIST_ITEMS_SESSION_KEY));
+    const updatedItems = artistItems.map(item => {
+        if (item.id === itemId) {
+            return {
+                ...item,
+                isPublished: !item.isPublished
+            };
+        }
+        return item;
+    });
+    localStorage.setItem(CHOSEN_ARTIST_ITEMS_SESSION_KEY, JSON.stringify(updatedItems));
+    // return updatedItems;
+};
+
+
+
 const cardsContainer = document.getElementById("cardsContainer")
 const renderCard = (item) => {
     const cardDiv = document.createElement("div");
@@ -56,6 +73,7 @@ const renderCard = (item) => {
     togglePublish.forEach(button => {
         button.addEventListener("click", (e) => {
             const {target} = e;
+            togglePublishFunction(item.id)
             if (target.textContent === "Publish") {
                 console.log("inside publish")
                 target.textContent = "Unpublish";
@@ -82,19 +100,25 @@ const renderCard = (item) => {
 
 export const populateArtistItems = () => {
     const artistItems = localStorage.getItem(CHOSEN_ARTIST_ITEMS_SESSION_KEY);
+    const artistName = localStorage.getItem(CHOSEN_ARTIST_NAME_SESSION_KEY);
     const artistItemsParsed = JSON.parse(artistItems);
-    console.log(artistItemsParsed);
 
     cardsContainer.innerHTML = "";
     artistItemsParsed.forEach(item => {
         renderCard(item);
     })
+
+    const artistNameElement = document.querySelector(".artistsNamee");
+
+    artistNameElement.innerHTML = artistName
 }
 
-const togglePublish = (item) => {
-    if(item.isPublished) {
-        
-    }
-}
+// const updateIsPublished = (itemId, isPublished) => {
+//     const itemIndex = data.findIndex(item => item.id === itemId);
+//     if (itemIndex !== -1) {
+//         data[itemIndex].isPublished = isPublished;
+//     }
+// };
+
 
 

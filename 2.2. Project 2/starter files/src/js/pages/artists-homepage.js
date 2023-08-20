@@ -72,11 +72,9 @@ export const hamburgerMenu = () => {
     hamburgerMenu.addEventListener("click", (e) => {
         if(!isMenuOpen) {
             hamburgerMenuItems.classList.add("active-hamburger-menu");
-            console.log(hamburgerMenuItems)
             isMenuOpen = true;
         } else {
             hamburgerMenuItems.classList.remove("active-hamburger-menu");
-            console.log(hamburgerMenuItems)
             isMenuOpen = false;
         }
     })

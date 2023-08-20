@@ -7,7 +7,6 @@ import { itemTypes } from "../../../Data/data.js";
 // import { renderOptions, ARTIST_NAMES_SESSION_KEY } from "./landing.js";
 
 export const ADDED_FILTER_VALUES_SESSION_KEY = "filter";
-const ADDED_FILTER_VALUES_FLAG_SESSION_KEY = "filtering";
 
 export const populateVisitorsListingPage = () => {
     const artistsItems = localStorage.getItem(ITEMS_SESSION_KEY);
