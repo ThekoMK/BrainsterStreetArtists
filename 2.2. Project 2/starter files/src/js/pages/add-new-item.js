@@ -1,4 +1,13 @@
 import { CHOSEN_ARTIST_NAME_SESSION_KEY } from "./artists-homepage.js";
+import { ITEM_TO_EDIT_SESSION_KEY } from "./artists-items-page.js";
+
+const isPublishedInput = document.getElementById("publishedCheckbox");
+const titleInput = document.getElementById("newItemTitle");
+const descriptionInput = document.getElementById("newItemDescription");
+const typeInput = document.getElementById("newItemType");
+const priceInput = document.getElementById("newItemPrice");
+const urlInput = document.getElementById("newItemUrl");
+
 
 export const hamburgerMenuItemsAdd = () => {
     const hamburgerMenu = document.querySelector(".hamburger-menu3");

@@ -1,6 +1,8 @@
 import { CHOSEN_ARTIST_NAME_SESSION_KEY, CHOSEN_ARTIST_ITEMS_SESSION_KEY } from "./artists-homepage.js"
 import { ITEMS_SESSION_KEY } from "../pages/landing.js"
 
+export const ITEM_TO_EDIT_SESSION_KEY = "currentlyEditing"
+
 export const hamburgerMenuItems = () => {
     const hamburgerMenu = document.querySelector(".hamburger-menu2");
     const hamburgerMenuItems = document.querySelector(".menu-container2");
@@ -117,7 +119,7 @@ const renderCard = (item) => {
                         <button class="bg-[#1B59AC] text-white py-1 px-4 rounded" data-item-id="${item.id}">Send to Auction</button>
                         <button class="${item.isPublished ? "bg-unPublishGreen text-white" : "bg-[#E5E5E5] text-textButton"} py-1 px-4 rounded toggle-publish" data-item-id="${item.id}">${item.isPublished ? "Unpublish" : "Publish"}</button>
                         <button class="bg-cardBackground2 text-backgroundLight py-1 px-4 rounded removeBtn" data-item-id="${item.id}">Remove</button>
-                        <button class="bg-backgroundLight text-backgroundDark py-1 px-4 rounded" data-item-id="${item.id}">Edit</button>
+                        <button class="bg-backgroundLight text-backgroundDark py-1 px-4 rounded editBtn" data-item-id="${item.id}">Edit</button>
                     </div>
                 </div>`
 
@@ -148,6 +150,13 @@ const renderCard = (item) => {
             const {target} = e;
             modal.classList.remove("hidden");
             initRemoveConfirmationModal(button);
+        })
+    })
+
+    const editBtn = cardDiv.querySelectorAll(".editBtn");
+    editBtn.forEach(button => {
+        button.addEventListener("click", () => {
+            console.log("To be continued!")
         })
     })
 }
