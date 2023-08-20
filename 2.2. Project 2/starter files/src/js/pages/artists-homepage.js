@@ -24,14 +24,14 @@ export const checkArtist = () => {
     })
 }
 
-const allItems = localStorage.getItem(ITEMS_SESSION_KEY);
-const allItemsArray = JSON.parse(allItems);
 
 const totalItemsSold = document.getElementById("totalItemsSold");
 const totalIncome = document.getElementById("totalIncome");
 const liveBid = document.getElementById("liveBid");
 
 export const joinAsArtist = () => {
+    const allItems = localStorage.getItem(ITEMS_SESSION_KEY);
+    const allItemsArray = JSON.parse(allItems);
     const chosenArtistName = localStorage.getItem(CHOSEN_ARTIST_NAME_SESSION_KEY);
     artistsName.innerHTML = chosenArtistName;
 

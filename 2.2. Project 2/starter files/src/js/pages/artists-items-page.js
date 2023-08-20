@@ -1,4 +1,5 @@
 import { CHOSEN_ARTIST_NAME_SESSION_KEY, CHOSEN_ARTIST_ITEMS_SESSION_KEY } from "./artists-homepage.js"
+import { ITEMS_SESSION_KEY } from "../pages/landing.js"
 
 export const hamburgerMenuItems = () => {
     const hamburgerMenu = document.querySelector(".hamburger-menu2");
@@ -25,6 +26,7 @@ export const hamburgerMenuItems = () => {
 
 const togglePublishFunction = (itemId) => {
     const artistItems = JSON.parse(localStorage.getItem(CHOSEN_ARTIST_ITEMS_SESSION_KEY));
+    const allArtistsItems = JSON.parse(localStorage.getItem(ITEMS_SESSION_KEY));
     const updatedItems = artistItems.map(item => {
         if (item.id === itemId) {
             return {
@@ -35,6 +37,17 @@ const togglePublishFunction = (itemId) => {
         return item;
     });
     localStorage.setItem(CHOSEN_ARTIST_ITEMS_SESSION_KEY, JSON.stringify(updatedItems));
+
+    const updatedAllItems = allArtistsItems.map(item => {
+        if (item.id === itemId) {
+            return {
+                ...item,
+                isPublished: !item.isPublished
+            };
+        }
+        return item;
+    })
+    localStorage.setItem(ITEMS_SESSION_KEY, JSON.stringify(updatedAllItems));
     // return updatedItems;
 };
 
@@ -73,6 +86,7 @@ const renderCard = (item) => {
     togglePublish.forEach(button => {
         button.addEventListener("click", (e) => {
             const {target} = e;
+            console.log(item.id)
             togglePublishFunction(item.id)
             if (target.textContent === "Publish") {
                 console.log("inside publish")
