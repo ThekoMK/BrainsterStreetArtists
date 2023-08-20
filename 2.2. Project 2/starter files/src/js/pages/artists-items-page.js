@@ -51,6 +51,52 @@ const togglePublishFunction = (itemId) => {
     // return updatedItems;
 };
 
+const modal = document.getElementById("myModal");
+function initRemoveConfirmationModal(myBtn) {
+    // const openModalButton = document.getElementById("openModal");
+    const confirmButton = document.getElementById("confirmButton");
+    const cancelButton = document.getElementById("cancelButton");
+
+    // myBtn.addEventListener("click", () => {
+    //     modal.classList.remove("hidden");
+    // });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.classList.add("hidden");
+        }
+    });
+
+    cancelButton.addEventListener("click", () => {
+        modal.classList.add("hidden");
+    });
+
+    confirmButton.addEventListener("click", () => {
+
+        handleRemove(myBtn.dataset.itemId);
+        myBtn.parentElement.parentElement.parentElement.remove();
+        modal.classList.add("hidden");
+    });
+}
+
+const handleRemove = (itemId) => {
+    const artistItems = JSON.parse(localStorage.getItem(CHOSEN_ARTIST_ITEMS_SESSION_KEY));
+    const allArtistsItems = JSON.parse(localStorage.getItem(ITEMS_SESSION_KEY));
+    
+    const itemIndex = artistItems.findIndex(item => item.id == itemId);
+
+    if (itemIndex !== -1) {
+        artistItems.splice(itemIndex, 1);
+        localStorage.setItem(CHOSEN_ARTIST_ITEMS_SESSION_KEY, JSON.stringify(artistItems));
+    }
+
+    const allItemsIndex = allArtistsItems.findIndex(item => item.id == itemId);
+
+    if (allItemsIndex !== -1) {
+        allArtistsItems.splice(allItemsIndex, 1);
+        localStorage.setItem(ITEMS_SESSION_KEY, JSON.stringify(allArtistsItems));
+    }
+}
 
 
 const cardsContainer = document.getElementById("cardsContainer")
@@ -86,15 +132,12 @@ const renderCard = (item) => {
     togglePublish.forEach(button => {
         button.addEventListener("click", (e) => {
             const {target} = e;
-            console.log(item.id)
             togglePublishFunction(item.id)
             if (target.textContent === "Publish") {
-                console.log("inside publish")
                 target.textContent = "Unpublish";
                 target.classList.remove("bg-[#E5E5E5]", "text-textButton");
                 target.classList.add("bg-unPublishGreen", "text-white");
             } else {
-                console.log("inside else")
                 button.textContent = "Publish";
                 button.classList.remove("bg-unPublishGreen", "text-white");
                 button.classList.add("bg-[#E5E5E5]", "text-textButton");
@@ -106,8 +149,12 @@ const renderCard = (item) => {
     const removeBtn = cardDiv.querySelectorAll(".removeBtn");
     removeBtn.forEach(button => {
         button.addEventListener("click", (e) => {
+            e.stopPropagation();
             const {target} = e;
-            target.parentElement.parentElement.parentElement.remove();
+            modal.classList.remove("hidden");
+            initRemoveConfirmationModal(button);
+            // target.parentElement.parentElement.parentElement.remove();
+            // handleRemove(item.id);
         })
     })
 }
@@ -127,12 +174,7 @@ export const populateArtistItems = () => {
     artistNameElement.innerHTML = artistName
 }
 
-// const updateIsPublished = (itemId, isPublished) => {
-//     const itemIndex = data.findIndex(item => item.id === itemId);
-//     if (itemIndex !== -1) {
-//         data[itemIndex].isPublished = isPublished;
-//     }
-// };
+
 
 
 

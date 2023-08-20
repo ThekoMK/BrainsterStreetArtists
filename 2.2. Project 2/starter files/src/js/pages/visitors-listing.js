@@ -115,7 +115,6 @@ export const populateVisitorsListingPage = () => {
     
     const filterCards = () => {
         let filterV = getItemFromLC(ADDED_FILTER_VALUES_SESSION_KEY);
-        // console.log(filterV);
 
         if (filterV === null) {
             filterV = {
@@ -137,7 +136,6 @@ export const populateVisitorsListingPage = () => {
             return matchesItemTitle && matchesArtist && matchesMinPrice && matchesMaxPrice && matchesType;
         });
 
-        console.log(filteredItems);
 
         if(filteredItems.length === 0) {
             cardWrapper.innerHTML = "";

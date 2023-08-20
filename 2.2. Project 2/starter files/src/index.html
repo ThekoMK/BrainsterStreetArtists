@@ -369,7 +369,7 @@
         </div>
 
     </section>
-    <section id="artistsItems" class="page-section">
+    <section id="artistsItems" class="page-section overflow-hidden">
         <nav class="w-screen bg-backgroundLight relative h-20 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
             <div class="absolute z-10">
                 <div class="flex">
@@ -401,55 +401,26 @@
                 </div>
             </div>
             <div id="cardsContainer">
-            <!-- <div class="w-full mt-5 bg-backgroundLight">
-                <img class="w-full h-[200px]" src="../img/1.jpeg" alt="" />
-                <div class="py-1 px-3">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h5 class="text-2xl text-backgroundDark">Item Title</h5>
-                            <small class="text-backgroundDark">18.08.2023</small>
-                        </div>
-                        <span class="px-2 rounded border  bg-backgroundDark text-backgroundLight">500$</span>
-                    </div>
-                    <p class="my-3 font-roboto text-backgroundDark">Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Assumenda, vitae.</p>
-                </div>
-                <div class="w-screen bg-backgroundDark py-3">
-                    <div class="w-full flex justify-around">
-                        <button class="bg-[#1B59AC] text-white py-1 px-4  rounded">Send to Auction</button>
-                        <button class="bg-unPublishGreen text-textButton py-1 px-4 rounded">Publish</button>
-                        <button class="bg-cardBackground2 text-backgroundLight py-1 px-4 rounded">Remove</button>
-                        <button class="bg-backgroundLight text-backgroundDark py-1 px-4 rounded">Edit</button>
-                    </div>
-                </div>
+                
             </div>
-            <div class="w-full mt-5 bg-backgroundLight">
-                <img class="w-full h-[200px]" src="../img/1.jpeg" alt="" />
-                <div class="py-1 px-3">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h5 class="text-2xl text-backgroundDark">Item Title</h5>
-                            <small class="text-backgroundDark">18.08.2023</small>
+        </div>
+        <div id="myModal" class="inset-0 flex items-center justify-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden">
+                    <div class="bg-white rounded p-6 max-w-sm mx-auto">
+                        <p class="mb-4">Are you sure you want to remove this item?</p>
+                        <div class="flex justify-center space-x-2">
+                            <button id="confirmButton" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
+                                Remove
+                            </button>
+                            <button id="cancelButton"
+                                class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded">
+                                Cancel
+                            </button>
                         </div>
-                        <span class="px-2 rounded border  bg-backgroundDark text-backgroundLight">500$</span>
-                    </div>
-                    <p class="my-3 font-roboto text-backgroundDark">Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Assumenda, vitae.</p>
-                </div>
-                <div class="w-screen bg-backgroundDark py-3">
-                    <div class="w-full flex justify-around">
-                        <button class="bg-[#1B59AC] text-white py-1 px-4  rounded">Send to Auction</button>
-                        <button class="bg-[#E5E5E5] text-textButton py-1 px-4 rounded">Publish</button>
-                        <button class="bg-cardBackground2 text-backgroundLight py-1 px-4 rounded">Remove</button>
-                        <button class="bg-backgroundLight text-backgroundDark py-1 px-4 rounded">Edit</button>
                     </div>
                 </div>
-            </div> -->
-        </div>
-        </div>
     </section>
     <section id="addNewItem" class="page-section">
-         <nav class="w-screen bg-backgroundLight relative h-20 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
+        <nav class="w-screen bg-backgroundLight relative h-20 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
             <div class="absolute z-10">
                 <div class="flex">
                     <a href="#" class="logo">
@@ -470,51 +441,60 @@
                 </ul>
             </div>
         </div>
-        <div class="bg-backgroundDark py-5 text-backgroundLight"> 
+        <div class="bg-backgroundDark py-5 text-backgroundLight">
             <div class="w-[90%] mx-auto">
                 <form>
                     <div class="flex items-center justify-between">
                         <h2 class="text-4xl">Add new Item</h2>
-                    <div>
-                        <label for="publishedCheckbox">Is published</label>
-                        <input type="checkbox" name="checkbox" id="publishedCheckbox">
-                    </div>
+                        <div>
+                            <label for="publishedCheckbox">Is published</label>
+                            <input type="checkbox" name="checkbox" id="publishedCheckbox">
+                        </div>
                     </div>
                     <div class="flex flex-col">
                         <label for="newItemTitle">Title</label>
-                        <input type="text" name="Title" id="newItemTitle" class="bg-backgroundDark border border-backgroundLight rounded">
+                        <input type="text" name="Title" id="newItemTitle"
+                            class="bg-backgroundDark border border-backgroundLight rounded">
                     </div>
                     <div class="flex flex-col mt-4">
                         <label for="newItemDescription">Description</label>
-                    <textarea name="Description" id="newItemDescription" rows="3" class="bg-backgroundDark border border-backgroundLight rounded"></textarea>   
+                        <textarea name="Description" id="newItemDescription" rows="3"
+                            class="bg-backgroundDark border border-backgroundLight rounded"></textarea>
                     </div>
                     <div class="flex justify-between mt-4">
                         <div class="flex flex-col">
                             <label for="newItemType">Type</label>
-                            <input type="text" name="Type" id="newItemType" class="bg-backgroundDark border border-backgroundLight rounded">
+                            <input type="text" name="Type" id="newItemType"
+                                class="bg-backgroundDark border border-backgroundLight rounded">
                         </div>
                         <div class="flex flex-col">
                             <label for="newItemPrice">Price</label>
-                            <input type="number" name="Price" id="newItemPrice" class="bg-backgroundDark border border-backgroundLight rounded">
+                            <input type="number" name="Price" id="newItemPrice"
+                                class="bg-backgroundDark border border-backgroundLight rounded">
                         </div>
                     </div>
                     <div class="flex flex-col mt-5">
                         <label for="newItemTitle">Image URL</label>
-                        <input type="text" name="Title" id="newItemTitle" class="bg-backgroundDark border border-backgroundLight rounded">
+                        <input type="text" name="Title" id="newItemTitle"
+                            class="bg-backgroundDark border border-backgroundLight rounded">
                     </div>
                     <div class="w-full text-center">
                         <span">or</span>
                     </div>
-                    <div class="w-full h-[300px] flex items-center justify-center border-2 border-dashed border-backgroundLight">
+                    <div
+                        class="w-full h-[300px] flex items-center justify-center border-2 border-dashed border-backgroundLight">
                         <div class="flex flex-col">
                             <img src="../img/camera.svg" alt="Camera">
-                        <p>Take a snapshot</p>
+                            <p>Take a snapshot</p>
                         </div>
                     </div>
-                        <div class="flex flex-grow">
-                            <button class="bg-cardBackground2 w-[175px] py-1 mt-4 rounded shadow-[0px 1px 1px 0px rgba(0, 0, 0, 0.25)]">Add new Item</button>
-                            <button class="bg-[#E5E5E5] w-[175px] text-textButton py-1 mt-4 rounded ms-auto shadow-[0px 1px 1px 0px rgba(0, 0, 0, 0.25)]">Cancel</button>
-                        </div>
+                    <div class="flex flex-grow">
+                        <button
+                            class="bg-cardBackground2 w-[175px] py-1 mt-4 rounded shadow-[0px 1px 1px 0px rgba(0, 0, 0, 0.25)]">Add
+                            new Item</button>
+                        <button
+                            class="bg-[#E5E5E5] w-[175px] text-textButton py-1 mt-4 rounded ms-auto shadow-[0px 1px 1px 0px rgba(0, 0, 0, 0.25)]">Cancel</button>
+                    </div>
                 </form>
 
             </div>
