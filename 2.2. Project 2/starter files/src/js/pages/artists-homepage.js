@@ -85,8 +85,3 @@ export const hamburgerMenu = () => {
         }
     })
 }
-
-export const clearLocalStorage = () => {
-    localStorage.removeItem(CHOSEN_ARTIST_NAME_SESSION_KEY);
-    localStorage.removeItem(CHOSEN_ARTIST_ITEMS_SESSION_KEY);
-}

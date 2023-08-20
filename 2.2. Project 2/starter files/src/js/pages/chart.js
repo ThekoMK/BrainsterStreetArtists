@@ -1,4 +1,4 @@
-import { CHOSEN_ARTIST_NAME_SESSION_KEY, CHOSEN_ARTIST_ITEMS_SESSION_KEY } from "./artists-homepage.js"
+import { CHOSEN_ARTIST_ITEMS_SESSION_KEY } from "./artists-homepage.js"
 
 let myChart;
 
@@ -85,7 +85,7 @@ export function drawChart() {
                 myChart.update()
             }
         })
-        last14.click() //Resets the chart for the new user.
+        last14.click()
     })
 }
 

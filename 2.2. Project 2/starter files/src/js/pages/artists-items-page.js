@@ -48,18 +48,13 @@ const togglePublishFunction = (itemId) => {
         return item;
     })
     localStorage.setItem(ITEMS_SESSION_KEY, JSON.stringify(updatedAllItems));
-    // return updatedItems;
 };
 
 const modal = document.getElementById("myModal");
+
 function initRemoveConfirmationModal(myBtn) {
-    // const openModalButton = document.getElementById("openModal");
     const confirmButton = document.getElementById("confirmButton");
     const cancelButton = document.getElementById("cancelButton");
-
-    // myBtn.addEventListener("click", () => {
-    //     modal.classList.remove("hidden");
-    // });
 
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
@@ -153,8 +148,6 @@ const renderCard = (item) => {
             const {target} = e;
             modal.classList.remove("hidden");
             initRemoveConfirmationModal(button);
-            // target.parentElement.parentElement.parentElement.remove();
-            // handleRemove(item.id);
         })
     })
 }

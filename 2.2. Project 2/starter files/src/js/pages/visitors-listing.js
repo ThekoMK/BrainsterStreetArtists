@@ -4,7 +4,6 @@ import {
     renderOptions,
 } from "./landing.js";
 import { itemTypes } from "../../../Data/data.js";
-// import { renderOptions, ARTIST_NAMES_SESSION_KEY } from "./landing.js";
 
 export const ADDED_FILTER_VALUES_SESSION_KEY = "filter";
 
@@ -49,7 +48,7 @@ export const populateVisitorsListingPage = () => {
         cardWrapper.appendChild(card);
     }
 
-    const cardWrapper = document.getElementById("card-container"); // Replace with your actual card wrapper element
+    const cardWrapper = document.getElementById("card-container"); 
 
     const renderAllCards = (positionWhereTheCardGoes, arr) => {
         cardWrapper.innerHTML = "";
@@ -58,9 +57,6 @@ export const populateVisitorsListingPage = () => {
         });
     };
 
-    // renderAllCards(cardWrapper);
-
-    // renderAllCards();
 
     const filterButton = document.getElementById("filterButton");
     const filterContainer = document.querySelector(".filters");
@@ -155,11 +151,6 @@ export const populateVisitorsListingPage = () => {
         storageFilterValues();
 
         filterCards();
-
-        // clearInputs();
-
-        // Store the filter values in localStorage
-
     });
 
     closeBtn.addEventListener("click", () => {

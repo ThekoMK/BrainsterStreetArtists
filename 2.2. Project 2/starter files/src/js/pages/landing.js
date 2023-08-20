@@ -1,10 +1,8 @@
 import {items} from "../../../Data/data.js"
 
 export const ARTIST_NAMES_SESSION_KEY = "artistNames";
-
 export const ITEMS_SESSION_KEY = "artistsItems";
 
-// const selectArtist = document.getElementById("chooseAnArtist");
 
 export const fetchArtists = () => {
 
