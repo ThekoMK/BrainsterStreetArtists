@@ -45,14 +45,39 @@ const renderCard = (item) => {
                     <div class="w-full flex justify-around">
                         <button class="bg-[#1B59AC] text-white py-1 px-4 rounded" data-item-id="${item.id}">Send to Auction</button>
                         <button class="${item.isPublished ? "bg-unPublishGreen text-white" : "bg-[#E5E5E5] text-textButton"} py-1 px-4 rounded toggle-publish" data-item-id="${item.id}">${item.isPublished ? "Unpublish" : "Publish"}</button>
-                        <button class="bg-cardBackground2 text-backgroundLight py-1 px-4 rounded" data-item-id="${item.id}">Remove</button>
+                        <button class="bg-cardBackground2 text-backgroundLight py-1 px-4 rounded removeBtn" data-item-id="${item.id}">Remove</button>
                         <button class="bg-backgroundLight text-backgroundDark py-1 px-4 rounded" data-item-id="${item.id}">Edit</button>
                     </div>
                 </div>`
 
     cardsContainer.appendChild(cardDiv);
 
-    const togglePublish = document.querySelectorAll(".toggle-publish");
+    const togglePublish = cardDiv.querySelectorAll(".toggle-publish");
+    togglePublish.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const {target} = e;
+            if (target.textContent === "Publish") {
+                console.log("inside publish")
+                target.textContent = "Unpublish";
+                target.classList.remove("bg-[#E5E5E5]", "text-textButton");
+                target.classList.add("bg-unPublishGreen", "text-white");
+            } else {
+                console.log("inside else")
+                button.textContent = "Publish";
+                button.classList.remove("bg-unPublishGreen", "text-white");
+                button.classList.add("bg-[#E5E5E5]", "text-textButton");
+
+            }
+        })
+    })
+
+    const removeBtn = cardDiv.querySelectorAll(".removeBtn");
+    removeBtn.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const {target} = e;
+            target.parentElement.parentElement.parentElement.remove();
+        })
+    })
 }
 
 export const populateArtistItems = () => {
@@ -65,4 +90,11 @@ export const populateArtistItems = () => {
         renderCard(item);
     })
 }
+
+const togglePublish = (item) => {
+    if(item.isPublished) {
+        
+    }
+}
+
 
