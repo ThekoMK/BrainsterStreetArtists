@@ -1,7 +1,8 @@
 import { CHOSEN_ARTIST_NAME_SESSION_KEY, CHOSEN_ARTIST_ITEMS_SESSION_KEY } from "./artists-homepage.js"
 import { ITEMS_SESSION_KEY } from "../pages/landing.js"
+import { editItems } from "./add-new-item.js";
 
-export const ITEM_TO_EDIT_SESSION_KEY = "currentlyEditing"
+// export const ITEM_TO_EDIT_SESSION_KEY = "currentlyEditing"
 
 export const hamburgerMenuItems = () => {
     const hamburgerMenu = document.querySelector(".hamburger-menu2");
@@ -157,6 +158,7 @@ const renderCard = (item) => {
     editBtn.forEach(button => {
         button.addEventListener("click", () => {
             console.log("To be continued!")
+            editItems(item)
         })
     })
 }

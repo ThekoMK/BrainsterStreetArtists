@@ -12,7 +12,7 @@ const VISITOR_PAGE_ROUTE_ID = "#visitor";
 const VISITOR_LISTING_ROUTE_ID = "#visitorListing";
 export const ARTIST_HOMEPAGE_ROUTE_ID = "#artists";
 const ARTISTS_ITEMS_ROUTE_ID = "#artistsItems";
-const ADD_NEW_ITEM_ROUTE_ID = "#addNewItem";
+export const ADD_NEW_ITEM_ROUTE_ID = "#addNewItem";
 
 
 const ALLOWED_ROUTES = [
