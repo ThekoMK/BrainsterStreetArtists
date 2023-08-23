@@ -92,8 +92,6 @@ export const editItems = (item) => {
         });
         localStorage.setItem(CHOSEN_ARTIST_ITEMS_SESSION_KEY, JSON.stringify(updatedItems));
 
-        clearInputs();
-
         location.hash = ARTISTS_ITEMS_ROUTE_ID
 
         renderCard(updatedItem);
