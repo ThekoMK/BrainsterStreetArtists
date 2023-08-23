@@ -98,14 +98,14 @@ const handleRemove = (itemId) => {
 
 
 const cardsContainer = document.getElementById("cardsContainer")
-const renderCard = (item) => {
+export const renderCard = (item) => {
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("w-full", "mt-5", "bg-backgroundLight");
 
 
     cardDiv.innerHTML = `
                 <img class="w-full h-[200px]" src="${item.image}" alt="${item.title}" />
-                <div class="py-1 px-3">
+                <div class="py-1 px-3 itemCard">
                     <div class="flex items-center justify-between">
                         <div>
                             <h5 class="text-2xl text-backgroundDark">${item.title}</h5>
@@ -157,8 +157,7 @@ const renderCard = (item) => {
     const editBtn = cardDiv.querySelectorAll(".editBtn");
     editBtn.forEach(button => {
         button.addEventListener("click", () => {
-            console.log("To be continued!")
-            editItems(item)
+            editItems(item);
         })
     })
 }

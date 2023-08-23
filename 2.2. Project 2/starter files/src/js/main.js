@@ -11,7 +11,7 @@ const LANDING_PAGE_ROUTE_ID = "#home";
 const VISITOR_PAGE_ROUTE_ID = "#visitor";
 const VISITOR_LISTING_ROUTE_ID = "#visitorListing";
 export const ARTIST_HOMEPAGE_ROUTE_ID = "#artists";
-const ARTISTS_ITEMS_ROUTE_ID = "#artistsItems";
+export const ARTISTS_ITEMS_ROUTE_ID = "#artistsItems";
 export const ADD_NEW_ITEM_ROUTE_ID = "#addNewItem";
 
 

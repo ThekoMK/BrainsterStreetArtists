@@ -1,7 +1,7 @@
 import { CHOSEN_ARTIST_NAME_SESSION_KEY, CHOSEN_ARTIST_ITEMS_SESSION_KEY } from "./artists-homepage.js";
 // import { ITEM_TO_EDIT_SESSION_KEY } from "./artists-items-page.js";
-import { ADD_NEW_ITEM_ROUTE_ID,  } from "../main.js"
-import { ITEMS_SESSION_KEY } from "./landing.js"
+import { ADD_NEW_ITEM_ROUTE_ID, ARTISTS_ITEMS_ROUTE_ID  } from "../main.js"
+import { renderCard } from "./artists-items-page.js";
 
 const isPublishedInput = document.getElementById("publishedCheckbox");
 const titleInput = document.getElementById("newItemTitle");
@@ -11,6 +11,15 @@ const priceInput = document.getElementById("newItemPrice");
 const urlInput = document.getElementById("newItemUrl");
 const addNewItemBtn = document.getElementById("addNewItemBtn");
 const cancelButton = document.getElementById("cancel");
+
+function clearInputs() {
+    isPublishedInput.checked = false;
+    titleInput.value = "";
+    descriptionInput.value = "";
+    typeInput.value = "";
+    priceInput.value = "";
+    urlInput.value = "";
+}
 
 
 export const hamburgerMenuItemsAdd = () => {
@@ -41,6 +50,13 @@ export const populateAddNewItem = () => {
 
     const addNewItemContainer = document.querySelector(".artistsNameee");
     addNewItemContainer.textContent = chosenArtist;
+
+    cancelButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        clearInputs();
+        location.hash = ARTISTS_ITEMS_ROUTE_ID
+    
+    })
 }
 
 export const editItems = (item) => {
@@ -75,6 +91,11 @@ export const editItems = (item) => {
             return existingItem;
         });
         localStorage.setItem(CHOSEN_ARTIST_ITEMS_SESSION_KEY, JSON.stringify(updatedItems));
-    })
 
+        clearInputs();
+
+        location.hash = ARTISTS_ITEMS_ROUTE_ID
+
+        renderCard(updatedItem);
+    })
 }
